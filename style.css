@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=PT+Sans:wght@400;700&display=swap');
+
+body{
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Manrope', sans-serif;
+    
+}
+
+header{
+    position: fixed;
+}
+
+
+.item-viz
+{
+    padding-bottom: 100px;
+}
+
+.presentation{
+    padding: 70px 0;
+    font-weight: 400;
+    /* font-size: 1.5em; */
+}
+
+.flex-container{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    position: relative;
+    top: 27em;  
+    
+}
+
+.flex-item{
+    display: flex;
+    margin-right: 100px; 
+   
+}
+
+.flex-item-1{
+    text-decoration: underline;
+    position: relative;
+    top: -10px;
+    
+
+}
+
+
+
+.projects li a, .social li a{
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    
+    
+}
+
+.projects li a:hover, .social li a:hover {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+}
+
+.projects li, .social li{
+    list-style-type: none;
+    padding-bottom: 10px;
+    
+    
+}
+
+
+#one,
+#two, 
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#ten,
+#eleven {
+    margin-left: 20%;
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#arrow-left .fa-arrow-left-long{
+    visibility: hidden;
+
+}
+
+img{
+        width: 100%;
+    }
+
+@media screen and (max-width: 768px) {
+    .presentation, .flex-item h2 {
+        font-size: 1em;
+        
+        
+       }
+
+   
+    .flex-item ul {
+        font-size: .9em;
+
+
+    }
+
+    .presentation {
+        padding: 20px 0;
+
+    }
+    
+    .flex-container, .flex-item{
+           flex-direction: column;
+           justify-content: left;
+             
+       }
+
+    .flex-container{
+        top: 20em;
+    }
+
+    .flex-item ul{
+        padding: 0px;
+
+    }
+
+    .sidenav{
+        display: none;
+    }
+
+    #one,
+#two, 
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#ten,
+#eleven {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+#arrow-left .fa-arrow-left-long{
+    margin-left: 0;
+    width: 80%;
+    padding-top: 40px;
+    color: black;
+    visibility: visible;
+
+}
+
+
+
+     
+
+    
+}
+   
+
+@media screen and (max-width: 1024px) {
+    .presentation, .flex-item h2 {
+        font-size: 1.2em;
+        
+        
+       }
+
+       .flex-item ul {
+        font-size: .95em;
+
+
+    }
+
+    .presentation {
+        padding: 70px 0;
+
+    }
+    
+    .flex-container, .flex-item{
+           flex-direction: row;
+           justify-content: left;
+             
+       }
+
+    .flex-container{
+        top: 30em;
+    }
+
+    .flex-item ul{
+        padding-left: 40px;
+
+    }
+
+    .sidenav{
+        display: none;
+    }
+
+    #one,
+#two, 
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#ten,
+#eleven {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+
+
+#arrow-left .fa-arrow-left-long{
+    margin-left: 0;
+    width: 80%;
+    padding-top: 40px;
+    color: black;
+    visibility: visible;
+
+}
+
+
+     
+
+    
+}
+
+
+
+@media screen and (min-width: 1024px) {
+    .presentation, .flex-item h2{
+        font-size: 1.5em;
+        
+        
+       }
+
+    .flex-item ul {
+        font-size: 1em;
+
+
+    }
+
+    .presentation {
+        padding: 70px 0;
+
+    }
+    
+    .flex-container, .flex-item{
+           flex-direction: row;
+           justify-content: left;
+             
+       }
+
+    .flex-container{
+        top: 30em;
+    }
+
+    .flex-item ul{
+        padding-left: 40px;
+
+    }
+
+    
+}
+
+
+ /* Tableau projects */
+
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+    padding-top: 30px;
+    text-align: center;
+    
+  }
+  
+.sidenav a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: block;
+    line-height: 22px;
+    
+  }
+
+  
+
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 30px;
+    left: 70px;
+    
+}
+
+.social-icons a{
+    cursor: pointer;
+}
+
+.fa-arrow-left-long{
+    font-size: 1.5rem;
+}
+
+
+#container2 rect.highcharts-legend-box{
+    margin-top: 100px;
+}
+
+
+
+ 
+
+
+
