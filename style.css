@@ -11,6 +11,8 @@ body{
 .presentation{
     padding: 20px 0;
     font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: 1.3;
 }
 
 .presentation h1{
