@@ -70,6 +70,219 @@ body{
     
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=PT+Sans:wght@400;700&display=swap');
+
+body{
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Manrope', sans-serif;
+    
+}
+
+
+.presentation{
+    padding: 20px 0;
+    font-weight: 300;
+}
+
+.presentation h1{
+    font-size: 2em;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    
+}
+
+.flex-item{
+    display: flex;
+    margin-right: 100px;
+   
+}
+
+.projects .flex-item-2,
+.social .flex-item-2
+{
+    text-decoration: none;
+    position: relative;
+    top: 7px;
+    margin-left: 20px;
+    
+
+}
+
+.projects .flex-item-1,
+.social .flex-item-1 {
+    text-decoration: underline;
+
+}
+
+
+
+.projects li a, .social li a{
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    
+    
+}
+
+.projects li a:hover, .social li a:hover {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+}
+
+.projects li, .social li{
+    list-style-type: none;
+    padding-bottom: 10px;
+    
+    
+}
+
+
+
+@media screen and (min-width: 375px) {
+    .flex-item h3 {
+        font-size: 0.9em;
+        
+        
+       }
+
+    .presentation h1{
+        font-size: 1.7em;
+    }
+
+   
+    .flex-item ul li a {
+        font-size: 0.8em;
+
+
+    }
+    
+
+    .presentation {
+        padding: 70px 0;
+
+    }
+    
+    .flex-container, .flex-item{
+           display: block;
+           justify-content: left;
+           
+             
+       }
+
+    .flex-container{
+        top: 20em;
+    }
+
+    .flex-item ul{
+        padding: 0px;
+
+    }
+
+    
+    
+}
+
+@media screen and (min-width: 768px) {
+    .flex-item h3 {
+        font-size: 1.1em;
+        
+        
+       }
+
+    .presentation h1{
+        font-size: 2.1em;
+    }
+
+    .flex-item ul li a {
+        font-size: 0.9em;
+
+
+    }
+
+    .presentation {
+        padding: 70px 0;
+
+    }
+
+    
+    
+    .flex-container, .flex-item{
+           display: flex;
+           flex-direction: row;
+           justify-content: left;
+             
+       }
+
+    .flex-container{
+        top: 30em;
+    }
+
+    .flex-item ul{
+        padding-left: 40px;
+
+    }
+
+    
+
+
+
+}
+   
+@media screen and (min-width: 1024px) {
+    .flex-item h3{
+        font-size: 1.3em;
+        
+        
+       }
+
+    .presentation h1{
+        font-size: 2.3em;
+    }
+
+    .flex-item ul li a {
+        font-size: 1em;
+
+
+    }
+
+    .presentation {
+        padding: 70px 0;
+
+    }
+    
+    
+    /* .flex-container, .flex-item{
+           flex-direction: row;
+           justify-content: left;
+             
+       } */
+
+    .flex-container{
+        top: 30em;
+    }
+
+    .flex-item ul{
+        padding-left: 40px;
+
+    }
+
+    
+}
+
+ 
+
+
+ 
+
+
+
+
 
 
 @media screen and (min-width: 375px) {
