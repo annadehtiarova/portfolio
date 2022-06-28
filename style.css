@@ -62,7 +62,7 @@ body{
     color: white;
     background-color: black;
     padding: 5px 10px;
-    transition: 1s ease-in;
+    
 }
 
 .projects li, .social li{
