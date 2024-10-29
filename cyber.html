@@ -4,76 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                lightGreen: '#e1f0f1',
+                lightBlue: '#d6e8f5',
+              }
+            },
+            fontSize: {
+                base: '20px',
+                md: '24px',
+                lg: '28px',
+              }
+            }}
+    </script>
 </head>
 <body>
-    <div class="w-[950px] mx-auto max-[786px]:w-[650px] max-[375px]:w-[360px]">
-        <nav class="py-12 flex flex-row justify-between max-[375px]:flex-col max-[375px]:items-center max-[375px]:gap-10">
+    <div class="font-['Figtree'] text-base w-[950px] mx-auto max-[786px]:w-[650px] max-[375px]:w-[360px]">
+        <nav class="py-12 text-base flex flex-row justify-between max-[375px]:flex-col max-[375px]:items-center max-[375px]:gap-10">
             <a href=""><div class="font-bold">ANNA DEHTIAROVA</div></a>
             <div class="flex flex-row gap-12 max-[375px]:gap-8">
                 <a href="index.html"  class="font-medium hover:font-medium"><div>Design</div></a>
                 <a href="code.html" class="hover:font-medium"><div>Code</div></a>
             </div>
         </nav>
-        <main class="py-16 flex flex-col justify-center gap-20 max-[768px]:py-10 max-[375px]:gap-10 max-[375px]:py-10">
-            <img src="cyber/tenzir_logo.svg" alt="tenzir_logo">
-            <div>MVP for Cybersecurity Data Management SaaS</div>
+        <main class="py-8 flex flex-col justify-center gap-20 max-[768px]:py-10 max-[375px]:gap-10 max-[375px]:py-10">
+            <img class="w-32 mx-auto" src="cyber/tenzir_logo.svg" alt="tenzir_logo">
+            <div class="text-[44px] text-center font-semibold">MVP for Cybersecurity Data Management SaaS</div>
             <img src="cyber/mock.svg" alt="mock">
-            <div>Overview</div>
+            <div class="text-center text-lg font-bold">Overview</div>
             <div>Tenzir is a company that specializes in providing data management solutions for security teams. Their goal is to help organizations efficiently process, analyze, and store large volumes of security data. Key features and functionalities of Tenzir include: data ingestion, data processing, scalability, analytics, storage optimization and integration. I was hired as the first and only Product Designer on the team and tasked to design the MVP.</div>
-            <div>
-                <div>
-                    <div>Problem</div>
+            <div class="flex flex-row gap-20">
+                <div class="w-[450px] flex flex-col gap-2">
+                    <div class="text-xl font-bold text-md">Problem</div>
                     <div>Organizations face challenges managing vast amounts of diverse and complex security data, leading to difficulties in data integration, slow processing, high storage costs, and limited analytical capabilities. This hampers their ability to detect and respond to threats efficiently.</div>
                 </div>
-                <div>
-                    <div>Solution</div>
+                <div class="w-[450px] flex flex-col gap-2">
+                    <div class="text-xl font-bold text-md">Solution</div>
                     <div>Tenzir provides a scalable platform for efficient data ingestion, processing, and storage, integrating diverse data sources into a unified format. It enhances data analysis with powerful tools, supports fast processing, and offers optimized storage solutions, allowing organizations to improve threat detection and incident response capabilities.</div>
                 </div>
             </div>
-            <div>
-                <div>
-                    <div>Role</div>
+            <div class="flex flex-row gap-36 bg-lightBlue p-20 rounded-lg">
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Role</div>
                     <div>Principal Product Designer</div>
                     <div>Data Visualization</div>
                 </div>
-                <div>
-                    <div>Process</div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Process</div>
                     <div>Research</div>
                     <div>Ideation</div>
                     <div>Design</div>
                     <div>Testing</div>
                 </div>
-                <div>
-                    <div>Tools</div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Tools</div>
                     <div>Figma</div>
                     <div>Slack</div>
                     <div>Github</div>
                     <div>Excalidraw</div>
                 </div>
             </div>
-            <div>Research&Analysis</div>
-            <div>
-                <div>Stakeholder interviews</div>
+            <div class="text-center text-lg font-bold">Research&Analysis</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">Stakeholder interviews</div>
                 <div>I conducted interviews with internal stakeholders, including the founder, engineering manager, and engineers, to tap into their existing knowledge about user needs, workflows, and design preferences. From these discussions, I developed a clear understanding of the key UI features, design goals, and performance requirements. Our goal was to get a basic version of the product to market quickly to start gathering real-world feedback.</div>
             </div>
-            <div>
-                <div>Competitive benchmarking</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">Competitive benchmarking</div>
                 <div>I looked at various user interfaces of leading competitors in the cybersecurity data management space to see what they offer, how users experience them and where they could be better. Even though the competition provides powerful and fast search and filtering capabilities, clean and modern UI, and extensive library of visualization options, I have noticed that in most cases the interface appears overwhelming due to its complexity and the large number of features available, making it difficult for new users to navigate. The UI can also be slow, particularly when handling large datasets.</div>
             </div>
-            <div>
-                <div>Personas</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">Personas</div>
                 <div>Based on the combination of existing knowledge from internal stakeholders, assumptions based on similar products, and industry insights, I created hypothetical user personas.</div>
-                <img src="cyber/personas.png" alt="personas">
+                <img  class="py-8" src="cyber/personas.png" alt="personas">
             </div>
-            <div>Ideation&Design</div>
-            <div>
-                <div>User stories</div>
+            <div class="text-center text-lg font-bold">Ideation&Design</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">User stories</div>
                 <div>I focused on several user stories that captured the core functionality needed for the MVP.</div>
             </div>
-            <div>
-                <div>As a Data Engineer I want to...</div>
-                <ul>
+            <div class="flex flex-col gap-8 bg-lightBlue p-20 rounded-lg">
+                <div class="font-bold text-md">As a Data Engineer I want to...</div>
+                <ul class="list-disc">
                     <li>add a node to the system so that I can integrate additional data sources or processing capabilities.</li>
                     <li>create a data pipeline so that I can define the flow and transformation of data from source to destination.</li>
                     <li>analyze data through interactive visualizations so that I can identify patterns and detect anomalies.</li>
@@ -81,33 +100,33 @@
                     <li>view a list of all created pipelines and their statuses so that I can monitor and manage their performance.</li>
                 </ul>
             </div>
-            <div>
-                <div>User flows</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">User flows</div>
                 <div>I created user flow diagrams for the key user stories by mapping out each step and interaction, ensuring a seamless and intuitive user experience while addressing essential user needs and functionalities.</div>
             </div>
-            <div>
-                <div>Brainstorming</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">Brainstorming</div>
                 <div>We then gathered with the product team for a quick brainstorming and sketching out ideas on a whiteboard.</div>
-                <img src="cyber/whiteboard.jpg" alt="whiteboard">
+                <img class="py-8" src="cyber/whiteboard.jpg" alt="whiteboard">
             </div>
-            <div>
-                <div>Design system</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">Design system</div>
                 <div>I designed the first design system for Tenzir, establishing guidelines and components to ensure consistency and efficiency across all digital products. This system streamlines the design process, enhances collaboration, and maintains a unified brand identity.</div>
-                <img src="cyber/design_system.svg" alt="design_system">
+                <img class="py-8" src="cyber/design_system.svg" alt="design_system">
             </div>
-            <div>
-                <div>Prototypes</div>
+            <div class="flex flex-col gap-2">
+                <div class="font-bold text-md">Prototypes</div>
                 <div>I enhanced the wireframes with more detailed design elements, including typography, icons, and spacing. I also added annotations to explain interactions and functionality. Finally, I created interactive prototypes to simulate user interactions and provide a more realistic preview of the final product. The prototypes were iterated upon multiple times based on feedback and usability testing with the product team, ensuring the design was user-centric and functional.</div>
-                <img src="cyber/mock.svg" alt="mock">
+                <img class="py-8" src="cyber/mock.svg" alt="mock">
             </div>
-            <div>
-                <div>Reflection</div>
+            <div class="flex flex-col gap-2">
+                <div class="text-center text-lg font-bold">Reflection</div>
                 <div>Creating the MVP for Tenzir was a rewarding and insightful experience. Despite limited direct user research, I relied on internal stakeholder interviews and their industry expertise to identify core needs and pain points. Collaborative brainstorming sessions and iterative feedback loops were crucial in refining our ideas and aligning our vision. Developing interactive prototypes allowed us to test and validate assumptions, ensuring a functional, intuitive, and user-centric design. This project emphasized the importance of flexibility, effective communication, and iterative design in creating a successful MVP. It enhanced my skills and deepened my understanding of designing complex data management tools.
                 </div>
             </div>
-            <div>
-                <div>Other projects:</div>
-                <div>Real estate portfolio management SaaS</div>
+            <div class="flex flex-col gap-2">
+                <div class="text-lg font-bold">Other projects:</div>
+                <a class="underline text-lg" href="real.html"><div>Real estate portfolio management SaaS</div></a>
             </div>
 
         </main>
