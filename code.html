@@ -3,20 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber</title>
+    <title>Programming</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                lightGreen: '#e1f0f1',
+                lightBlue: '#d6e8f5',
+              }
+            },
+            fontSize: {
+                base: '20px',
+                md: '24px',
+                lg: '28px',
+              }
+            }}
+    </script>
 </head>
 <body>
-    <div class="w-[950px] mx-auto max-[786px]:w-[650px] max-[375px]:w-[360px]">
+    <div class="w-[950px] text-base mx-auto max-[786px]:w-[650px] max-[375px]:w-[360px]">
         <nav class="py-12 flex flex-row justify-between max-[375px]:flex-col max-[375px]:items-center max-[375px]:gap-10">
             <a href=""><div class="font-bold">ANNA DEHTIAROVA</div></a>
             <div class="flex flex-row gap-12 max-[375px]:gap-8">
-                <a href="index.html"  class="font-medium hover:font-medium"><div>Design</div></a>
-                <a href="code.html" class="hover:font-medium"><div>Code</div></a>
+                <a href="index.html"  class=" hover:font-medium"><div>Design</div></a>
+                <a href="code.html" class=" font-medium hover:font-medium"><div>Code</div></a>
             </div>
         </nav>
         <main class="py-16 flex flex-col justify-center gap-20 max-[768px]:py-10 max-[375px]:gap-10 max-[375px]:py-10">
-            
+            <main class="py-16 flex flex-col justify-center gap-20 max-[768px]:py-10 max-[375px]:gap-10 max-[375px]:py-10">
+                <div class="flex flex-col justify-center gap-8">
+                <a href="https://github.com/annadehtiarova/interactive-card-details" class="hover:cursor-pointer"><img class="rounded-lg" src="code/1.png" alt="mock"></a>
+                <div class="flex flex-col justify-center gap-4 items-center">
+                <div class="text-md font-semibold text-center max-[375px]:text-lg">Interactive card component</div>
+                <div>HTML CSS Javascript</div>
+                </div>
+            </div>
+                <div class="flex flex-col justify-center gap-8">
+                <a href="https://github.com/annadehtiarova/expenses-chart-component"><img class="rounded-lg" src="code/2.png" alt="mock"></a>
+                <div class="flex flex-col justify-center gap-4 items-center">
+                <div class="text-md font-semibold text-center max-[375px]:text-lg">Expenses chart component</div>
+                <div>HTML CSS Javascript</div>
+            </div>
+                </div>
+                <div class="flex flex-col justify-center gap-8">
+                <a href="https://github.com/annadehtiarova/results-summary"><img class="rounded-lg" src="code/3.png" alt="mock"></a>
+                <div class="flex flex-col justify-center gap-4 items-center">
+                <div class="text-md font-semibold text-center max-[375px]:text-lg">Results summary component</div>
+                <div>HTML CSS</div>
+                </div>
+                </div>
+                <div class="flex flex-col justify-center gap-8">
+                <a href="https://github.com/annadehtiarova/single-price-grid"><img class="rounded-lg" src="code/4.png" alt="mock"></a>
+                <div class="flex flex-col justify-center gap-4 items-center">
+                <div class="text-md font-semibold text-center max-[375px]:text-lg">Price grid</div>
+                <div>HTML CSS</div>
+                </div>
+            </div>
+            </main>
         </main>
         <footer class="py-12 flex flex-row justify-center gap-10 max-[375px]:flex-col max-[375px]:items-center ">
             <div class="flex flex-row items-center gap-2">
