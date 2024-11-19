@@ -26,15 +26,22 @@
     </script>
 </head>
 <body>
+    <nav class="py-12 flex flex-row mx-auto justify-between  max-[440px]:flex-col max-[440px]:items-center max-[440px]:gap-10 border-b border-slate-200">
+        <div class="w-[950px] flex flex-row mx-auto justify-between max-[786px]:w-[650px] max-[786px]:px-10  max-[440px]:w-[340px] max-[440px]:px-2">
+        <div class="flex flex-row items-center gap-2">
+            <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA </div></a>
+            <div class="text-md">🇺🇦</div>
+        </div>
+           
+        <div class="flex flex-row gap-12 max-[440px]:gap-8">
+            <a href="index.html"  class="font-semibold hover:font-semibold"><div>Work</div></a>
+            <a href="https://public.tableau.com/app/profile/anna5028/vizzes" target="_blank" class="hover:font-semibold"><div>Data vis</div></a>
+            <a href="index.html"  class="hover:font-semibold"><div>About</div></a>
+            
+        </div>
+    </div>
+    </nav>
     <div class="font-['Figtree'] text-base w-[950px] mx-auto max-[786px]:w-[650px] max-[440px]:w-[340px]">
-        <nav class="py-12 text-base flex flex-row justify-between max-[440px]:flex-col max-[440px]:items-center max-[440px]:gap-10">
-            <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA</div></a>
-            <div class="flex flex-row gap-12 max-[440px]:gap-8">
-                <a href="index.html"  class="font-semibold hover:font-medium"><div>Design</div></a>
-                <a href="code.html" class="hover:font-semibold"><div>Development</div></a>
-                <a href="experiments.html" class="hover:font-semibold"><div>Experiments</div></a>
-            </div>
-        </nav>
         <main class="py-8 flex flex-col justify-center gap-20 max-[768px]:py-10 max-[440px]:gap-10 max-[440px]:py-10">
             <img class="w-32 max-[440px]:w-24 mx-auto" src="real/bm-logo.svg" alt="tenzir_logo">
             <div class="text-[44px] text-center font-semibold max-[440px]:text-lg">Space Utilization Dashboard for Real Estate Portfolio Management SaaS</div>
@@ -61,7 +68,7 @@
                 </div>
                 
             </div>
-            <div class="flex flex-row max-[440px]:flex-col gap-36 max-[768px]:gap-16 bg-lightGreen p-20 max-[440px]:p-10 rounded-lg">
+            <div class="flex flex-row max-[440px]:flex-col gap-36 max-[768px]:gap-16 bg-lightGreen p-20 max-[440px]:p-10 ">
                 <div class="flex flex-col gap-2">
                     <div class="font-semibold">Role</div>
                     <div>UX/UI Designer (Team of 5)</div>
@@ -120,7 +127,7 @@
                 <div class="font-semibold text-md max-[440px]:text-base">User stories</div>
                 <div>I created user stories that capture the needs and goals of each persona, helping to ensure that the Space Utilization Dashboard meets their specific requirements and enhances their workflow.</div>
             </div>
-            <div class="flex flex-col gap-8 bg-lightGreen p-20 max-[440px]:p-10 rounded-lg">
+            <div class="flex flex-col gap-8 bg-lightGreen p-20 max-[440px]:p-10 ">
                 <div class="font-semibold text-md max-[440px]:text-base">As a Facility Manager, I want to...</div>
                 <ul class="list-disc">
                     <li>access real-time data on space utilization, so that I can quickly address issues such as overcrowding and maintenance needs.</li>
@@ -129,7 +136,7 @@
                     <li>see employee satisfaction survey data alongside space utilization metrics, so that I can understand how the workspace affects employee satisfaction and make improvements accordingly.</li>
                 </ul>
             </div>
-            <div class="flex flex-col gap-8 bg-lightGreen p-20 max-[440px]:p-10 rounded-lg">
+            <div class="flex flex-col gap-8 bg-lightGreen p-20 max-[440px]:p-10 ">
                 <div class="font-semibold text-md max-[440px]:text-base">As a Property Manager, I want to...</div>
                 <ul class="list-disc">
                     <li>communicate insights to different stakeholders, so that I can provide relevant insights and address specific needs of tenants, investors, and upper management.</li>
@@ -172,12 +179,12 @@
                 <div class="font-semibold text-md max-[440px]:text-base">User flows</div>
                 <div>I <span class="font-bold">mapped out each step</span> of user's journey from Asset management page in to Space utilization page through each dashboard. User flows helped me determine the layout of each dashboard, ensuring users could complete their tasks without friction.
                 </div>
-                <img class="rounded-lg" src="real/user flow.png" alt="user-flow">
+                <img src="real/user flow.png" alt="user-flow">
             </div>
             <div class="flex flex-col gap-2">
                 <div class="font-semibold text-md max-[440px]:text-base">Low/mid-fidelity wireframes</div>
                 <div>I created low-fidelity prototypes using basic sketching tools and Figma to <span class="font-bold">quickly visualize and iterate</span> on core concepts and user flows before refining them into high-fidelity designs.</div>
-                <img class="rounded-lg" src="real/wireframe2.jpg" alt="wireframe1">
+                <img src="real/wireframe2.jpg" alt="wireframe1">
                 <img class="rounded-lg" src="real/wireframe1.jpg" alt="whireframe2">
             </div>
             <div class="flex flex-col gap-2">
@@ -195,24 +202,26 @@
             </div>
             <div class="flex flex-col gap-2">
                 <div class="text-lg font-semibold max-[440px]:text-md">Other projects:</div>
-                <a class="underline text-lg max-[440px]:text-md" href="cyber.html"><div>Cybersecurity data management SaaS</div></a>
+                <a class="underline text-md max-[440px]:text-md" href="cyber.html"><div>Design System and MVP for Tenzir</div></a>
+                <a class="underline text-md max-[440px]:text-md" href="banking.html"><div>Digital Banking</div></a>
+                <a class="underline text-md max-[440px]:text-md" href="flights.html"><div>Reimagining Flight Booking</div></a>
             </div>
 
         </main>
         
     </div>
-    <footer class="py-12 flex flex-row justify-center gap-10 max-[440px]:flex-col max-[440px]:items-center border-t border-slate-200 ">
+    <footer class=" py-12 flex flex-row justify-center gap-10 max-[440px]:flex-col max-[440px]:items-center border-t border-slate-200  ">
         <div class="flex flex-row items-center gap-2">
         <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="mailto:anna.dehtiarova@gmail.com" target="_blank" class="text-base">Email</a>
+        <a href="mailto:anna.dehtiarova@gmail.com" target="_blank" >Email</a>
         </div>
         <div class="flex flex-row items-center gap-2">
             <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="https://github.com/annadehtiarova"  target="_blank" class="text-base">GitHub</a>
+        <a href="https://github.com/annadehtiarova"  target="_blank" >GitHub</a>
         </div>
         <div class="flex flex-row items-center gap-2">
         <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" class="text-base">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" >LinkedIn</a>
         </div>
     </footer>
     
