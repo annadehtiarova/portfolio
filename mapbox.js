@@ -1,36 +1,29 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5uYWRlaHRpYXJvdmEiLCJhIjoiY2t5b2YzNzBmMzRwcDMwcXB5Z2ViczJqcCJ9.vl48QtJdnAUJ4YHYsTkbJg';
 
-const berlinBounds = [
-    [13.0884, 52.3383], // Southwest corner
-    [13.7612, 52.6755]  // Northeast corner
-];
+    const berlinBounds = [
+        [13.0884, 52.3383], // Southwest
+        [13.7612, 52.6755]  // Northeast
+    ];
 
-const map2 = new mapboxgl.Map({
-    container: 'map2',
-    style: 'mapbox://styles/annadehtiarova/cm7ncczhz00yu01r347ah0gx9',
-    center: [13.404954, 52.520008],
-    zoom: 11,
-    maxBounds: berlinBounds
-});
+    async function loadData() {
+        console.time("Data Load Time");
+        try {
+            const response = await fetch('./data-vis/data.json');
+            const data = await response.json();
+            console.timeEnd("Data Load Time");
 
-map2.fitBounds(berlinBounds, { padding: 20 });
+            return data.filter(station => station.DateTime && !isNaN(new Date(station.DateTime).getTime()));
+        } catch (error) {
+            console.error('Error loading data:', error);
+            return [];
+        }
+    }
 
-// 🛠 Format Date Helper (Fixing 1970 Issue)
-const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return isNaN(date.getTime()) 
-        ? "Invalid Date" 
-        : date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + 
-          " " + date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
-};
+    async function initMap() {
+        const validData = await loadData();
+        if (validData.length === 0) return;
 
-fetch('./data-vis/data.json')
-    .then(response => response.json())
-    .then(data => {
-        // 🛠 Filtering out bad dates to prevent "01 January 1970"
-        const validData = data.filter(station => station.DateTime && !isNaN(new Date(station.DateTime).getTime()));
-
-        const uniqueDates = [...new Set(validData.map(station => new Date(station.DateTime).toISOString()))].sort();
+        const uniqueDates = [...new Set(validData.map(s => new Date(s.DateTime).toISOString()))].sort();
         const startDateIndex = uniqueDates.findIndex(date => date.startsWith('2024-02-11'));
 
         const geojsonData = {
@@ -48,23 +41,19 @@ fetch('./data-vis/data.json')
             }))
         };
 
+        const map2 = new mapboxgl.Map({
+            container: 'map2',
+            style: 'mapbox://styles/annadehtiarova/cm7ncczhz00yu01r347ah0gx9',
+            center: [13.404954, 52.520008],
+            zoom: 11,
+            maxBounds: berlinBounds
+        });
+
+        map2.fitBounds(berlinBounds, { padding: 20 });
+
         map2.on('load', function () {
-            // Update data source based on selected date from the slider
-            function updateMapData(index) {
-                const selectedDate = uniqueDates[index];
-                const filteredData = geojsonData.features.filter(feature =>
-                    new Date(feature.properties.dateTime).toDateString() === new Date(selectedDate).toDateString()
-                );
-
-                // Update the map with filtered data based on selected date
-                map2.getSource('stations').setData({
-                    type: 'FeatureCollection',
-                    features: filteredData
-                });
-            }
-
-            // Add the source and layer for the stations
             map2.addSource('stations', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+
             map2.addLayer({
                 id: 'stations-layer',
                 type: 'circle',
@@ -76,7 +65,18 @@ fetch('./data-vis/data.json')
                 }
             });
 
-            // Handle mouse interaction with the stations layer
+            function updateMapData(index) {
+                const selectedDate = uniqueDates[index];
+                const filteredData = geojsonData.features.filter(feature =>
+                    new Date(feature.properties.dateTime).toDateString() === new Date(selectedDate).toDateString()
+                );
+
+                map2.getSource('stations').setData({
+                    type: 'FeatureCollection',
+                    features: filteredData
+                });
+            }
+
             map2.on('mouseenter', 'stations-layer', function (e) {
                 map2.getCanvas().style.cursor = 'pointer';
                 const feature = e.features[0];
@@ -84,7 +84,7 @@ fetch('./data-vis/data.json')
                     .setLngLat(feature.geometry.coordinates)
                     .setHTML(`
                         <span style="font-size: 14px; font-weight: 600;">${feature.properties.stationAddress}</span><br>
-                        <span style="font-size: 14px; font-weight: 300;">Date: ${formatDate(feature.properties.dateTime)}</span><br>
+                        <span style="font-size: 14px; font-weight: 300;">Date: ${new Date(feature.properties.dateTime).toLocaleString()}</span><br>
                         <span style="font-size: 14px; font-weight: 300;">Count Value: ${feature.properties.countValue}</span>
                     `)
                     .addTo(map2);
@@ -95,23 +95,31 @@ fetch('./data-vis/data.json')
                 });
             });
 
-            // 🎛 UI Elements
             const dateSlider = document.getElementById('dateSlider');
             const dateDisplay = document.getElementById('dateDisplay');
-    
+
             dateSlider.min = 0;
             dateSlider.max = uniqueDates.length - 1;
             dateSlider.value = startDateIndex >= 0 ? startDateIndex : 0;
-            dateDisplay.textContent = formatDate(uniqueDates[dateSlider.value]);
+            dateDisplay.textContent = new Date(uniqueDates[dateSlider.value]).toLocaleDateString();
 
-            // Update map data whenever the slider value changes
             dateSlider.addEventListener('input', function () {
                 updateMapData(this.value);
-                dateDisplay.textContent = formatDate(uniqueDates[this.value]);
+                dateDisplay.textContent = new Date(uniqueDates[this.value]).toLocaleString('en-GB', {
+                    day: 'numeric', month: 'long', year: 'numeric', 
+                    hour: '2-digit', minute: '2-digit', hour12: false
+                });
             });
+            
+            // Initialize date display
+            dateDisplay.textContent = new Date(uniqueDates[dateSlider.value]).toLocaleString('en-GB', {
+                day: 'numeric', month: 'long', year: 'numeric', 
+                hour: '2-digit', minute: '2-digit', hour12: false
+            });
+            
 
-            // Initialize the map with data corresponding to the slider's initial value
             updateMapData(dateSlider.value);
         });
-    })
-    .catch(error => console.error('Error loading data:', error));
+    }
+
+    initMap();
