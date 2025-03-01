@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berlin Bicycle Count</title>
+    <link rel="icon" type="image/svg+xml" href="circle.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                lightGreen: '#e1f0f1',
+                lightBlue: '#d6e8f5',
+              }
+            },
+            fontSize: {
+                base: '20px',
+                md: '24px',
+                lg: '28px',
+              },
+            fontFamily: {
+                custom: ['PolySans', 'sans-serif'],
+            }
+          }
+        }
+    </script>
+
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Main container for map and sidebar */
+        .map-container {
+            display: flex;
+            height: 85vh; /* Full screen height */
+
+        }
+
+        /* Sidebar (Left Container) */
+        .bicycle-barometer {
+            height: 85vh; /* Full height */
+            background: rgba(255, 255, 255, 0.95);
+            overflow-y: auto; /* Scrollable if content overflows */
+        }
+
+        /* Fullscreen Map */
+        #map2 {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: white;
+            width: 100%;
+            padding: 20px 10%;
+        }
+
+        /* Mobile Menu (Hidden by Default) */
+        #menuDropdown {
+            display: none;
+        }
+
+        /* Slider container */
+        #sliderContainer {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            z-index: 10;
+            width: 300px; /* Width of the slider container */
+            height: 400px;
+            padding: 10px;
+            background-color: transparent; /* Ensure no background color */
+        }
+
+        /* Slider */
+            #dateSlider {
+                width: 100%; /* Ensure the slider fits the container's width */
+                -webkit-appearance: none; /* Remove default styles */
+                appearance: none; /* Remove default styles */
+                height: 8px; /* Slider track thickness */
+                background: #ddd; /* Light gray background for the track */
+                border-radius: 5px; /* Rounded corners for the track */
+                outline: none; /* Remove outline when active */
+            }
+
+            /* Slider thumb (circle) */
+            #dateSlider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                background-color: black; /* Black color for the slider thumb */
+                border-radius: 50%; /* Make it round */
+                cursor: pointer; /* Cursor indicates it's clickable */
+                transition: background-color 0.3s ease;
+            }
+
+            #dateSlider::-moz-range-thumb {
+                width: 20px;
+                height: 20px;
+                background-color: black; /* Black color for the slider thumb */
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            #dateDisplay {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #playButton {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: #4DDE3A; /* Same color as circles */
+            color: white;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+
+         </style>
+</head>
+<body>
+
+   <!-- Navigation Bar -->
+<header class="w-full px-10 md:px-10 lg:px-16">
+    <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
+        <div class="flex flex-row items-center gap-2">
+            <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA</div></a>
+        </div>  
+        <div id="navMenu" class="flex flex-row items-center gap-6">
+            <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+            </a>
+            <a href="https://github.com/annadehtiarova" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+            </a>
+        </div> 
+    </div>
+  </header>
+
+    <!-- Main Layout (Sidebar + Map) -->
+    <main class="flex flex-col md:flex-row h-auto md:h-[85vh] overflow-hidden">
+        <!-- Left Sidebar (Fixed 600px Width) -->
+        <div class="bicycle-barometer flex flex-col gap-4 overflow-hidden h-auto w-[100%] md:w-[45%] md:overflow-y-auto">
+            <img class="70%" src="./data-vis/barometer11.svg" alt="Bike Counter Image" class="mb-4">
+            <div class="p-10 flex flex-col gap-4">
+            <h3 class="font-bold">Bicycle Traffic in Berlin 2024</h3>
+            <!-- <p>An interactive visualization that enables users to explore bicycle traffic in different areas of Berlin.</p>
+            <p class="font-semibold">Python, D3.js, Mapbox</p> -->
+            
+            <p>
+                Since 1983, manual traffic counts of bicycles have been carried out regularly in Berlin at selected locations. Since 2012, additional automatic permanent counting points have been gradually put into operation.
+            </p>
+            <p>
+                The first bicycle barometer was installed in July 2021 on Straße des 17. Juni in front of the entrance to the TU Berlin on the northern side of the street.
+            </p>
+            <p>
+                The detection of bicycles is done with induction loops, which are connected to a sensor. These changes are analyzed and stored as a counting pulse.
+            </p>
+            <p class="font-bold">Bikes are counted at the following 24 locations with a total of 35 counting points in Berlin:</p>     
+            <ol>
+                <li>Schwedter Steg</li>
+                <li>Jannowitzbrücke Nord/Süd</li>
+                <li>Prinzregentenstraße</li>
+                <li>Yorckstraße Ost/West</li>
+                <li>Monumentenstraße</li>
+                <li>Markstraße</li>
+                <li>Invalidenstraße Ost/West</li>
+                <li>Oberbaumbrücke Ost/West</li>
+                <li>Paul-und-Paula-Uferweg</li>
+                <li>Alberichstraße</li>
+                <li>Berliner Straße Nord/Süd</li>
+                <li>Klosterstraße Nord/Süd</li>
+                <li>Breitenbachplatz Ost/West</li>
+                <li>Mariendorfer Damm Nord/Süd</li>
+                <li>Maybachufer</li>
+                <li>Kaisersteg</li>
+                <li>Frankfurter Allee Ost/West</li>
+                <li>Straße des 17. Juni Ost/West</li>
+                <li>Karl-Marx-Allee</li>
+                <li>Senefelder Platz Nord</li>
+                <li>Nordufer</li>
+                <li>Nonnendammallee Ost/West</li>
+                <li>Strausberger Platz</li>
+                <li>Schönhauser Allee</li>
+            </ol>
+            <p class="text-xs">Data source: Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt.</p>
+            
+        </div>
+            
+        </div>
+
+        <!-- Right Container (Map) -->
+        <div id="map2" class="w-[100vw]">
+
+             <!-- Slider Container -->
+        <div id="sliderContainer">
+            <div id="dateDisplay"></div>
+            <input type="range" id="dateSlider" min="0" max="0" value="0">
+        </div>
+        </div>
+
+    </main>
+
+
+    <!-- Load D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+    <!-- Mapbox JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+
+
+    <!-- Load Your Visualization Scripts -->
+    <script src="mapbox.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>

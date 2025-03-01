@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home energy consumption app</title>
+    <link rel="icon" type="image/svg+xml" href="circle.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                lightGreen: '#e1f0f1',
+                lightBlue: '#d6e8f5',
+              }
+            },
+            fontSize: {
+                base: '20px',
+                md: '24px',
+                lg: '28px',
+              },
+            fontFamily: {
+                custom: ['Helvetica', 'sans-serif'],
+            }
+          }
+        }
+    </script>
+</head>
+<body class="p-4">
+   <!-- Navigation Bar -->
+<header class="w-full px-10 md:px-10 lg:px-16">
+  <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
+      <div class="flex flex-row items-center gap-2">
+          <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA</div></a>
+      </div>  
+      <div id="navMenu" class="flex flex-row items-center gap-6">
+        <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+        </a>
+        <a href="https://github.com/annadehtiarova" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+        </a>
+    </div> 
+  </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="w-full px-10 md:px-10 lg:px-16">
+        <div class="max-w-[1450px] mx-auto flex flex-col gap-20">
+            <!-- Hero Section -->
+            <section class="flex flex-col gap-10">
+                <div>
+                    <p class="font-bold text-sm">PowerTrack</p>
+                    <p class="text-gray-700">Design of a home energy consumption app to reduce costs and carbon emissions</p>
+                    <p class="text-gray-700">2024</p>
+                </div>
+
+                <div class="flex flex-col items-center md:flex-row gap-24">
+                    <img class="w-full md:w-[65%] object-contain" src="./energy/smartplug.webp" alt="">
+                    <video class="w-[200px] md:w-[19%] self-center" src="./energy/energy6.mp4" autoplay></video>
+                </div>
+            </section>
+
+            <!-- Problem & Solution -->
+            <section class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2">
+                    <p class="font-semibold">Problem</p>
+                    <p >
+                        With increasing energy costs and environmental concerns, homeowners are struggling to efficiently manage their energy consumption. 
+                        Many individuals find it difficult to track and optimize their energy usage, leading to higher utility bills and unnecessary carbon footprints. 
+                        Traditional energy monitoring methods are often fragmented, not user-friendly, or fail to provide real-time insights into energy usage patterns. 
+                        Homeowners lack the tools needed to make informed decisions about energy-saving practices, leading to wasted resources and missed opportunities for sustainability.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="font-semibold">Solution</p>
+                    <p class="">
+                        PowerTrack provides an intuitive, real-time solution for managing and optimizing home energy usage. 
+                        By integrating smart home technology and advanced analytics, the app enables users to monitor their energy consumption, 
+                        set efficiency goals, and receive personalized recommendations for reducing energy waste. 
+                        The app's user-friendly interface offers clear insights into energy usage patterns, helping homeowners identify areas for improvement. 
+                        Through actionable tips, automated settings, and smart scheduling, our app empowers users to lower their energy bills, 
+                        reduce their carbon footprint, and contribute to a more sustainable future.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Screens -->
+            <img class="w-full h-auto" src="./energy/key screens.png" alt="">
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("hamburger").addEventListener("click", function () {
+            document.getElementById("menuDropdown").classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

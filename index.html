@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Dehtiarova</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta property="og:image" content="https://www.annadehtiarova.com/open-graph/og-image.png" />
-    <meta property="og:url" content="https://www.annadehtiarova.com" />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="circle.svg">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,9 +25,10 @@
                 lg: '28px',
               },
             fontFamily: {
-                custom: ['PolySans', 'sans-serif'],
+                custom: ['Helvetica', 'sans-serif'],
             }
-            }}
+          }
+        }
     </script>
     <style>
         @font-face {
@@ -39,80 +38,61 @@
             font-style: normal;
         }
     </style>
-    
 </head>
-<body>
-    <div class="relative">
-        <button 
-        id="hamburger" 
-        class="block invisible max-[440px]:visible absolute top-12 right-8 cursor-pointer">
-        <div class="space-y-1.5">
-          <span class="block w-8 h-1 bg-gray-800"></span>
-          <span class="block w-8 h-1 bg-gray-800"></span>
-          <span class="block w-8 h-1 bg-gray-800"></span>
-        </div>
-        <nav 
-        id="menuDropdown" 
-        class="hidden p-8 text-[18px] flex flex-col gap-6 items-start justify-center absolute top-28 right-0 w-[375px] bg-white"
-      >
-        <a href="index.html" >Work</a>
-        <a href="https://public.tableau.com/app/profile/anna5028/vizzes" >Data Vis</a>
-        <a href="about.html" >About</a>
-      </nav>
-      </button>
-    </div>
-    
-    <nav  class="py-12 flex flex-row mx-auto justify-between border-b border-slate-200">
-        <div class="w-[950px] flex flex-row mx-auto justify-between max-[786px]:w-[650px] max-[786px]:px-10  max-[440px]:w-[340px] max-[440px]:px-2">
+<body class="p-4">
+    <!-- Navigation Bar -->
+<header class="w-full px-10 md:px-10 lg:px-16">
+    <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
         <div class="flex flex-row items-center gap-2">
-            <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA </div></a>
-            <div class="text-md">🇺🇦</div>
+            <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA</div></a>
         </div>  
-        <div id="navMenu" class="flex flex-row items-center gap-12 max-[440px]:gap-8 max-[440px]:hidden">
-            <a href="index.html"  class="font-semibold"><div>Work</div></a>
-            <a href="https://public.tableau.com/app/profile/anna5028/vizzes" class="hover:font-semibold"><div>Data vis</div></a>
-            <a href="about.html"  class="hover:font-semibold"><div>About</div></a>
+        <div id="navMenu" class="flex flex-row items-center gap-6">
+            <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+            </a>
+            <a href="https://github.com/annadehtiarova" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+            </a>
         </div> 
     </div>
-    </nav>
+  </header>
 
-    <div class="font-['Figtree'] text-base w-[950px] mx-auto max-[786px]:w-[650px] max-[440px]:w-[340px] max-[440px]:px-0 max-[786px]:px-10">
-        
-        <header class="py-16 mx-auto justify-center gap-20 max-[768px]:py-10 max-[440px]:gap-10 max-[440px]:py-10">
-            <div class="text-[40px] font-medium max-[440px]:text-[28px]">Hi, I’m Anna—a product designer based in Berlin. Driven by passion for both data and design, I craft user-friendly products that deliver valuable, data-driven insights.</div>
-        </header>
-        <main class="py-16 grid grid-cols-2 justify-center gap-8 max-[768px]:grid-cols-1 max-[440px]:grid-cols-1 max-[768px]:py-10 max-[440px]:gap-10 max-[440px]:py-10">
-           
-            <div class="flex flex-col justify-center gap-8">
-            <a href="cyber.html" class="hover:cursor-pointer rounded-lg bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><img class="w-full h-full"  src="home/cyber.svg" alt="mock"></a>
-            </div>
-            <div class="flex flex-col justify-center gap-8">
-            <a href="real.html" class="rounded-lg bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><object class="w-full h-full pointer-events-none"  data="home/real.svg" alt="mock"></object></a>
-            </div>
-            <div class="flex flex-col justify-center gap-8">
-                <a href="" class=" bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><object class="w-full h-full pointer-events-none"  data="home/energy.svg" alt="mock"></object></a>
-            </div>
-            <div class="flex flex-col justify-center gap-8">
-                <a href="" class=" bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><object class="w-full h-full pointer-events-none"  data="home/worktogether.svg" alt="mock"></object></a>
-            </div>
+    <!-- Main Content -->
+    <div class="w-full px-10 md:px-10 lg:px-16">
+        <main class="max-w-[1450px] mx-auto grid grid-cols-1 gap-y-20 justify-items-center
+            md:grid-cols-6 md:gap-y-36">
+            
+            <!-- Bike Count Section -->
+            <a href="datavis.html" class="row-start-1 col-span-3 relative">
+                <img src="./home/bike-man2.jpg" alt="Bike Count Photo">
+            </a>
+            
+            <!-- Energy App Section -->
+            <a href="energy.html" class="row-start-2 w-[50%] col-span-1 md:col-start-2 md:col-span-2 md:justify-items-center">
+                <img src="./home/energy_app.png" alt="Energy App">
+            </a>
+            
+            <!-- Tenzir Section -->
+            <a href="cyber.html" class="row-start-3 col-span-4 md:col-start-2 md:col-span-4 lg:col-start-2">
+                <img src="./home/web-tenzir.svg" alt="Tenzir">
+            </a>
+            
+            <!-- Light Icon Section -->
+            <a href="real.html" class="row-start-4 col-span-4 md:col-start-3 md:col-span-3 lg:col-start-4 ">
+                <img src="./home/space-usage.jpg" alt="Light Icon">
+            </a>
+            
+            <!-- Political Image Section -->
+            <a href="political.html" class="row-start-5 col-span-2 md:col-start-1 md:col-span-4">
+                <img src="./home/3.png" alt="Political Image">
+            </a>
+            
+            <!-- Leaves Icon Section -->
+            <a href="nyc.html" class="row-start-6 col-span-1 md:col-start-3 md:col-span-1">
+                <img class="max-[430px]:w-[120px] max-[786px]:w-[240px]" src="./home/leaves.png" alt="Leaves Icon">
+            </a>
         </main>
     </div>
-    <footer class=" py-12 flex flex-row justify-center gap-10 max-[440px]:flex-col max-[440px]:items-center border-t border-slate-200  ">
-        <div class="flex flex-row items-center gap-2">
-        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="mailto:anna.dehtiarova@gmail.com" target="_blank" >Email</a>
-        </div>
-        <div class="flex flex-row items-center gap-2">
-            <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="https://github.com/annadehtiarova"  target="_blank" >GitHub</a>
-        </div>
-        <div class="flex flex-row items-center gap-2">
-        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" >LinkedIn</a>
-        </div>
-    </footer>
 
-    <script src="index.js"></script>
-    
 </body>
 </html>

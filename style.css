@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+#berlin-map{
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 90vh;
+    position:relative;
+    left: 100px;
+}
+#slider-container {
+    position: absolute;
+    top: 100px;
+    left: 900px;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+#play-button {
+    position: absolute;
+    top: 250px;
+    right: 20px;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: none;
+    box-shadow: none;
+    border-color: black;
+    width: 100px;
+}
+#slider-date {
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    z-index: 1;
+}
+
+#date-slider {
+    -webkit-appearance: none;
+    width: 220px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+    position: absolute;
+    top: 100px;
+    left: 310px;
+    z-index: 1;
+}
+
+#date-slider:hover {
+    opacity: 1;
+}
+
+#date-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 64px;
+    height: 42px;
+    background: url(./data-vis/bike.svg) no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#date-slider::-moz-range-thumb {
+    width: 80px;
+    height: 42px;
+    background: url(./data-vis/bike.svg) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+video {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: white !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  #map, #map2 { width: 80%; height: 50vh; position: relative; }
+  .d3-layer { position: absolute; top: 0; left: 0; }
