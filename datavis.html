@@ -50,12 +50,12 @@
             overflow-y: auto; /* Scrollable if content overflows */
         }
 
-        /* Fullscreen Map */
         #map2 {
-            height: 100vh;
-            width: 100vw;
-            position: relative;
-        }
+        flex-grow: 1;
+        height: 100%;
+        width: 100%;
+        min-height: 500px; /* Ensures visibility */
+    }
 
         /* Navigation Bar */
         header {
@@ -226,7 +226,6 @@
 
     <!-- Mapbox JS -->
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
-
 
     <!-- Load Your Visualization Scripts -->
     <script src="mapbox.js"></script>
