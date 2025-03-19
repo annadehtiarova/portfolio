@@ -14,3 +14,9 @@ video {
     -moz-appearance: none;
     appearance: none;
   }
+
+  #pauseBtn {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, pointer-events 0s 0.3s;
+}

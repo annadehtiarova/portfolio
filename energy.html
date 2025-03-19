@@ -60,10 +60,22 @@
 
                 <div class="flex flex-col items-center md:flex-row gap-24">
                     <img class="w-full md:w-[65%] object-contain" src="./energy/energy-header.jpg" alt="">
-                    <video class="w-[200px] md:w-[22%] self-center" autoplay muted playsinline>
-                      <source src="./energy/energy6.mp4" type="video/mp4">
-                  </video>
-                </div>
+                    <div id="videoContainer" class="relative w-[200px] md:w-[22%] self-center group flex items-center justify-center">
+                      <video id="energyVideo" class="w-full h-auto" autoplay muted playsinline>
+                          <source src="./energy/energy6.mp4" type="video/mp4">
+                      </video>
+                  
+                      <!-- Pause button, initially hidden -->
+                    <button id="pauseBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-[#96FD98] text-black rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity md:bottom-1/2 md:translate-y-[-50%]">
+                      <i class="fas fa-pause text-sm md:text-md"></i>
+                    </button>
+
+                    <!-- Play button, initially hidden -->
+                    <button id="playBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-[#96FD98] text-black rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity md:bottom-1/2 md:translate-y-[-50%]">
+                        <i class="fas fa-play text-sm md:text-md"></i>
+                    </button>
+                    </div>
+                  
             </section>
 
             <!-- Problem & Solution -->
@@ -93,7 +105,7 @@
             <!-- Screens -->
             <!-- <img class="w-full h-auto" src="./energy/key screens.png" alt=""> -->
             <p class="font-semibold">Website design</p>
-            <img class="w-full h-auto" src="./energy/desktop-energy.jpg" alt="">
+            <img class="w-full h-auto" src="./energy/energy-website.jpg" alt="">
         </div>
     </main>
 
@@ -102,5 +114,7 @@
             document.getElementById("menuDropdown").classList.toggle("hidden");
         });
     </script>
+
+    <script src="index.js"></script>
 </body>
 </html>
