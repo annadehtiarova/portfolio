@@ -20,3 +20,11 @@ video {
     pointer-events: none;
     transition: opacity 0.3s ease, pointer-events 0s 0.3s;
 }
+
+@supports not (display: grid) {
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
