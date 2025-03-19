@@ -34,13 +34,13 @@
 <header class="w-full px-4 md:px-10 lg:px-16">
   <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
       <div class="flex flex-row items-center gap-2">
-          <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA</div></a>
+          <a href="index.html"><div class="font-bold" aria-label="Anna Dehtiarova's portfolio">ANNA DEHTIAROVA</div></a>
       </div>  
       <div id="navMenu" class="flex flex-row items-center gap-6">
-        <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
             <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
         </a>
-        <a href="https://github.com/annadehtiarova" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/annadehtiarova" target="_blank" aria-label="Anna's GitHub profile">
             <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
         </a>
     </div> 
@@ -51,27 +51,27 @@
     <main class="w-full px-4 md:px-10 lg:px-16">
         <div class="max-w-[1450px] mx-auto flex flex-col gap-20">
             <!-- Hero Section -->
-            <section class="flex flex-col gap-10">
-                <div>
-                    <p class="font-bold text-sm">PowerTrack</p>
-                    <p class="text-gray-700">Design of a home energy consumption app to reduce costs and carbon emissions</p>
-                    <p class="text-gray-700">2024</p>
-                </div>
+            <section class="flex flex-col gap-10" aria-hidden="false">
+              <div tabindex="0">
+                <p id="project-title" class="font-bold text-sm" aria-label="Project title: PowerTrack">PowerTrack</p>
+                <p class="text-gray-700" aria-label="Project description: Design of a home energy consumption app to reduce costs and carbon emissions">Design of a home energy consumption app to reduce costs and carbon emissions</p>
+                <p class="text-gray-700" aria-label="Project year: 2024">2024</p>
+              </div>
 
                 <div class="flex flex-col items-center md:flex-row gap-24">
-                    <img class="w-full md:w-[65%] object-contain" src="./energy/energy-header.jpg" alt="">
-                    <div id="videoContainer" class="relative w-[200px] md:w-[22%] self-center group flex items-center justify-center">
+                    <img class="w-full md:w-[65%] object-contain" src="./energy/energy-header.jpg" tabindex="0" aria-label="A demonstration of how a normal plug is connected to a smart plug">
+                    <div id="videoContainer" class="relative w-[200px] md:w-[22%] self-center group flex items-center justify-center" tabindex="0" aria-label="A prototype of a mobile app which shows how to add y device and start tracking your energy consumption">
                       <video id="energyVideo" class="w-full h-auto" autoplay muted playsinline>
                           <source src="./energy/energy6.mp4" type="video/mp4">
                       </video>
                   
                       <!-- Pause button, initially hidden -->
-                    <button id="pauseBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-[#96FD98] text-black rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]">
+                    <button id="pauseBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-[#96FD98] text-black rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]" tabindex="-1">
                       <i class="fas fa-pause text-sm md:text-md"></i>
                     </button>
 
                     <!-- Play button, initially hidden -->
-                    <button id="playBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-[#96FD98] text-black rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]">
+                    <button id="playBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-[#96FD98] text-black rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]" tabindex="-1">
                         <i class="fas fa-play text-sm md:text-md"></i>
                     </button>
                     </div>
@@ -80,18 +80,26 @@
 
             <!-- Problem & Solution -->
             <section class="flex flex-col md:flex-row gap-10">
-                <div class="md:w-1/2">
+                <div class="md:w-1/2" tabindex="0">
                     <p class="font-semibold">Problem</p>
-                    <p >
+                    <p aria-label="Problem description: With increasing energy costs and environmental concerns, homeowners are struggling to efficiently manage their energy consumption. 
+                    Many individuals find it difficult to track and optimize their energy usage, leading to higher utility bills and unnecessary carbon footprints. 
+                    Traditional energy monitoring methods are often fragmented, not user-friendly, or fail to provide real-time insights into energy usage patterns. 
+                    Homeowners lack the tools needed to make informed decisions about energy-saving practices, leading to wasted resources and missed opportunities for sustainability.">
                         With increasing energy costs and environmental concerns, homeowners are struggling to efficiently manage their energy consumption. 
                         Many individuals find it difficult to track and optimize their energy usage, leading to higher utility bills and unnecessary carbon footprints. 
                         Traditional energy monitoring methods are often fragmented, not user-friendly, or fail to provide real-time insights into energy usage patterns. 
                         Homeowners lack the tools needed to make informed decisions about energy-saving practices, leading to wasted resources and missed opportunities for sustainability.
                     </p>
                 </div>
-                <div class="md:w-1/2">
+                <div class="md:w-1/2" tabindex="0">
                     <p class="font-semibold">Solution</p>
-                    <p class="">
+                    <p aria-label="Solution description: PowerTrack provides an intuitive, real-time solution for managing and optimizing home energy usage. 
+                    By integrating smart home technology and advanced analytics, the app enables users to monitor their energy consumption, 
+                    set efficiency goals, and receive personalized recommendations for reducing energy waste. 
+                    The app's user-friendly interface offers clear insights into energy usage patterns, helping homeowners identify areas for improvement. 
+                    Through actionable tips, automated settings, and smart scheduling, our app empowers users to lower their energy bills, 
+                    reduce their carbon footprint, and contribute to a more sustainable future.">
                         PowerTrack provides an intuitive, real-time solution for managing and optimizing home energy usage. 
                         By integrating smart home technology and advanced analytics, the app enables users to monitor their energy consumption, 
                         set efficiency goals, and receive personalized recommendations for reducing energy waste. 
@@ -103,9 +111,10 @@
             </section>
 
             <!-- Screens -->
-            <!-- <img class="w-full h-auto" src="./energy/key screens.png" alt=""> -->
-            <p class="font-semibold">Website design</p>
-            <img class="w-full h-auto" src="./energy/energy-website.jpg" alt="">
+            <img class="w-full h-auto" tabindex="0" src="./energy/key screens.png" alt="Key screens of the PowerTrack mobile app">
+            <p class="font-semibold" tabindex="0">Website design</p>
+            <img class="w-full h-auto" src="./energy/energy-website.jpg" tabindex="0" alt="Mockup of the PowerTrack website, showcasing how the app simplifies home energy management with intuitive features for monitoring and optimizing energy usage."
+            >
         </div>
     </main>
 
