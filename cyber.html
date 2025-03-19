@@ -33,13 +33,13 @@
 <header class="w-full px-4 md:px-10 lg:px-16">
   <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
       <div class="flex flex-row items-center gap-2">
-          <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA</div></a>
+          <a href="index.html"><div class="font-bold" aria-label="Anna Dehtiarova's portfolio">ANNA DEHTIAROVA</div></a>
       </div>  
       <div id="navMenu" class="flex flex-row items-center gap-6">
-        <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
             <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
         </a>
-        <a href="https://github.com/annadehtiarova" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/annadehtiarova" target="_blank" aria-label="Anna's GitHub profile">
             <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
         </a>
     </div> 
@@ -50,23 +50,23 @@
   <main class="w-full px-4 md:px-10 lg:px-16">
     <div class="w-full mx-auto flex flex-col gap-10 md:gap-36 max-w-[1450px]">
       <div class="flex flex-col gap-10">
-        <div>
-        <p class="font-bold w-full">Tenzir</p>
-        <p>Website and MVP design for a security data pipeline platform</p>
-        <p>2023-2024</p>
+        <div tabindex="0">
+        <p class="font-bold w-full" aria-label="Project title: Tenzir">Tenzir</p>
+        <p aria-label="Project description: Website and MVP design for a security data pipeline platform">Website and MVP design for a security data pipeline platform</p>
+        <p aria-label="Project duration: 2023-2024">2023-2024</p>
       </div>
-      <div id="videoContainer" class="md:w-[80%] relative">
+      <div id="videoContainer" class="md:w-[80%] relative" tabindex="0" aria-label="Prototype of Tenzir website">
       <video id="energyVideo" class="w-full" autoplay muted playsinline>
         <source src="./cyber/tenzir-web5.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
         <!-- Pause button, initially hidden -->
-        <button id="pauseBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0074F5] to-[#8EE500] text-white rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]">
+        <button id="pauseBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0074F5] to-[#8EE500] text-white rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]" tabindex="-1">
           <i class="fas fa-pause text-sm md:text-md"></i>
         </button>
 
         <!-- Play button, initially hidden -->
-        <button id="playBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0074F5] to-[#8EE500] text-white rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]">
+        <button id="playBtn" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0074F5] to-[#8EE500] text-white rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center opacity-0 pointer-events-none transition-opacity bottom-1/2 translate-y-[-50%]" tabindex="-1">
             <i class="fas fa-play text-sm md:text-md"></i>
         </button>
        
@@ -77,13 +77,13 @@
     <section class="flex flex-col md:flex-row gap-10">
       <div class="md:w-1/2">
           <p class="font-semibold">Problem</p>
-          <p class="text-gray-700">
+          <p class="text-gray-700" tabindex="0" aria-label="Problem description: Security teams face significant challenges in managing large volumes of complex data from multiple, disconnected sources. This leads to inefficiencies in data integration, slow processing speeds, and high storage costs, while limiting their ability to analyze and detect threats quickly. Traditional systems often fail to provide the real-time insights and scalability needed, making it difficult for teams to respond to security incidents in a timely manner.">
             Security teams face significant challenges in managing large volumes of complex data from multiple, disconnected sources. This leads to inefficiencies in data integration, slow processing speeds, and high storage costs, while limiting their ability to analyze and detect threats quickly. Traditional systems often fail to provide the real-time insights and scalability needed, making it difficult for teams to respond to security incidents in a timely manner.
           </p>
       </div>
       <div class="md:w-1/2">
           <p class="font-semibold">Solution</p>
-          <p class="text-gray-700">
+          <p class="text-gray-700" tabindex="0" aria-label="Solution description: We designed a platform that simplified data ingestion from multiple sources using Tenzir Query Language (TQL), making it more accessible through prompt-based assistance and easy-to-navigate documentation for quick reference. Users could run and deploy pipelines, and monitor their state in real time, gaining instant visibility into data flow and performance. Additionally, we introduced data visualization capabilities, enabling users to analyze security data more effectively through interactive charts and graphs. ">
             We designed a platform that simplified data ingestion from multiple sources using Tenzir Query Language (TQL), making it more accessible through prompt-based assistance and easy-to-navigate documentation for quick reference. Users could run and deploy pipelines, and monitor their state in real time, gaining instant visibility into data flow and performance. Additionally, we introduced data visualization capabilities, enabling users to analyze security data more effectively through interactive charts and graphs.
           </p>
       </div>
@@ -91,13 +91,13 @@
 
     <!-- Image Section -->
     <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
-      <img class="col-start-1 col-span-1 md:col-start-2 md:col-span-5 w-full h-auto mx-auto" src="./cyber/design_system.svg" alt=""> 
-      <img class="col-start-1 col-span-1 md:col-start-2 md:col-span-5 w-full h-auto mx-auto" src="./cyber/mock.svg" alt=""> 
+      <img class="col-start-1 col-span-1 md:col-start-2 md:col-span-5 w-full h-auto mx-auto" src="./cyber/design_system.svg" tabindex="0" alt="Visual elements of Tenzir's design system"> 
+      <img class="col-start-1 col-span-1 md:col-start-2 md:col-span-5 w-full h-auto mx-auto" src="./cyber/mock.svg" tabindex="0" alt="Mockups of two key screens of the Tenzir app, editor and dashboard."> 
     </div>
 
     <!-- Research and Analysis, Ideation and Design, Reflection sections -->
     <div class="flex flex-col gap-10 w-full max-w-[750px]">
-      <div class="flex flex-col">
+      <div class="flex flex-col" tabindex="0">
         <p class="font-semibold">Research and analysis</p>
         <div class="flex flex-col gap-4">
         <p>I conducted interviews with internal stakeholders, including the founder, engineering manager, and engineers, to tap into their existing knowledge about user needs, workflows, and design preferences. From these discussions, I developed a clear understanding of the key UI features, design goals, and performance requirements. Our goal was to get a basic version of the product to market quickly to start gathering real-world feedback.</p>
@@ -106,7 +106,7 @@
       </div>
     </div>
 
-      <div class="flex flex-col">
+      <div class="flex flex-col" tabindex="0">
         <p class="font-semibold">Ideation and design</p>
         <div class="flex flex-col gap-4">
         <p>I focused on key user stories for the MVP, creating user flow diagrams to map out each interaction and ensure a seamless experience. After a brainstorming session with the product team, I used Figma to create low-fidelity wireframes that outlined the basic structure and UI elements, like navigation and buttons. These wireframes were shared with the team for feedback and iterated upon to refine the layout.
@@ -115,7 +115,7 @@
       </div>
     </div>
       
-      <div class="flex flex-col mb-[70px]">
+      <div class="flex flex-col mb-[70px]" tabindex="0">
         <p class="font-semibold">Reflection</p>
         <p>Creating the MVP for Tenzir was a rewarding and insightful experience. Despite limited direct user research, I relied on internal stakeholder interviews and their industry expertise to identify core needs and pain points. Collaborative brainstorming sessions and iterative feedback loops were crucial in refining our ideas and aligning our vision. Developing interactive prototypes allowed us to test and validate assumptions, ensuring a functional, intuitive, and user-centric design. This project emphasized the importance of flexibility, effective communication, and iterative design in creating a successful MVP. It enhanced my skills and deepened my understanding of designing complex data management tools.</p>
       </div>
