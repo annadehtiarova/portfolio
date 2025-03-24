@@ -30,6 +30,11 @@
     </script>
 </head>
 <body>
+  <div class="max-w-[1450px] mx-auto">
+    <a href="#main-content" class="sr-only focus:not-sr-only rounded-md border-black border-2 bg-white text-black focus:px-8 focus:py-4 focus:w-[250px] focus:flex focus:justify-center">
+        Skip to main content
+    </a>
+  </div>
     <!-- Navigation Bar -->
 <header class="w-full px-4 md:px-10 lg:px-16">
   <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
@@ -48,7 +53,7 @@
 </header>
 
     <!-- Main Content -->
-    <main class="w-full px-4 md:px-10 lg:px-16">
+    <main class="w-full px-4 md:px-10 lg:px-16" id="main-content" aria-live="polite" tabindex="-1">
         <div class="container mx-auto flex flex-col gap-10 md:gap-36 max-w-[1450px]">
             <!-- Project Details -->
             <div class="flex flex-col gap-6 md:gap-10">
@@ -62,7 +67,7 @@
 
             <!-- Problem & Solution -->
             <div class="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-10">
-                <div class="col-start-1 md:col-start-2 md:col-span-3" tabindex="0">
+                <div class="col-start-1 md:col-start-2 md:col-span-3" tabindex="0" id="main-content">
                     <p class="font-semibold">Problem</p>
                     <p>BuildingMinds' previous Space Utilization dashboard lacked meaningful insights, making it difficult for organizations to effectively manage their spaces. Without accurate data, optimizing space usage, planning for future needs, and reducing operational costs proved challenging. This inefficiency led to wasted resources, higher expenses, and increased energy consumption, impacting both budgets and the environment.</p>
                 </div>

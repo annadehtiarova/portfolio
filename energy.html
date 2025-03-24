@@ -30,6 +30,11 @@
     </script>
 </head>
 <body>
+  <div class="max-w-[1450px] mx-auto">
+    <a href="#main-content" class="sr-only focus:not-sr-only rounded-md border-black border-2 bg-white text-black focus:px-8 focus:py-4 focus:w-[250px] focus:flex focus:justify-center">
+        Skip to main content
+    </a>
+  </div>
    <!-- Navigation Bar -->
 <header class="w-full px-4 md:px-10 lg:px-16">
   <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
@@ -48,15 +53,16 @@
 </header>
 
     <!-- Main Content -->
-    <main class="w-full px-4 md:px-10 lg:px-16">
-        <div class="max-w-[1450px] mx-auto flex flex-col gap-20">
+    <main class="w-full px-4 md:px-10 lg:px-16" id="main-content" aria-live="polite" tabindex="-1">
+        <div  class="max-w-[1450px] mx-auto flex flex-col gap-20">
             <!-- Hero Section -->
-            <section class="flex flex-col gap-10" aria-hidden="false">
+            <div class="flex flex-col gap-10">
               <div tabindex="0">
-                <p id="project-title" class="font-bold text-sm" aria-label="Project title: PowerTrack">PowerTrack</p>
+                <p class="font-bold text-sm" aria-label="Project title: PowerTrack">PowerTrack</p>
                 <p class="text-gray-700" aria-label="Project description: Design of a home energy consumption app to reduce costs and carbon emissions">Design of a home energy consumption app to reduce costs and carbon emissions</p>
                 <p class="text-gray-700" aria-label="Project duration: 2024">2024</p>
               </div>
+            </div>
                 <div class="flex flex-col items-center md:flex-row gap-24">
                     <img class="w-full md:w-[65%] object-contain" src="./energy/energy-header.jpg" tabindex="0" aria-label="A demonstration of how a normal plug is connected to a smart plug">
                     <div id="videoContainer" class="relative w-[200px] md:w-[22%] self-center group flex items-center justify-center" tabindex="0" aria-label="A prototype of a mobile app which showcasing how to add a device and start tracking your energy usage">
@@ -75,7 +81,7 @@
                     </button>
                     </div>
                   
-            </section>
+                  </div>
 
             <!-- Problem & Solution -->
             <section class="flex flex-col md:flex-row gap-10">

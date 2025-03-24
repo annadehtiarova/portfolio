@@ -28,3 +28,38 @@ video {
       align-items: center;
     }
   }
+
+ 
+/* Ensure only the images inside the .image-hover anchor are affected */
+.image-hover {
+    position: relative;
+    display: inline-block; /* Ensures the images are placed correctly */
+}
+
+/* Make the hover image initially invisible */
+.image-hover .hover-image {
+    position: absolute; /* Position the hover image on top of the default image */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in transition */
+    width: 100%; /* Ensure it occupies the same size as the default image */
+    height: 100%; /* Ensure it occupies the same height as the default image */
+}
+
+/* The default image will always be visible */
+.image-hover .default-image {
+    display: block;
+    width: 100%; /* Ensure it occupies the full width of the parent */
+    height: auto; /* Maintain the image's aspect ratio */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-out transition */
+}
+
+/* When hovering, hide the default image and show the hover image */
+.image-hover:hover .default-image {
+    opacity: 0; /* Fade out the default image */
+}
+
+.image-hover:hover .hover-image {
+    opacity: 1; /* Fade in the hover image */
+}
