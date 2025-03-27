@@ -187,6 +187,7 @@
       cube.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
     };
 
+    // Mouse events
     cube.addEventListener("mousedown", (e) => {
       isDragging = true;
       startX = e.clientX;
@@ -204,6 +205,28 @@
     });
 
     document.addEventListener("mouseup", () => {
+      isDragging = false;
+      cube.style.cursor = "grab";
+    });
+
+    // Touch events for mobile
+    cube.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      cube.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+      const deltaX = e.touches[0].clientX - startX;
+      const deltaY = e.touches[0].clientY - startY;
+      rotateCube(deltaX, deltaY);
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchend", () => {
       isDragging = false;
       cube.style.cursor = "grab";
     });
