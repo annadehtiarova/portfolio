@@ -1,102 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';">
-    <title>Anna Dehtiarova</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="circle.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                lightGreen: '#e1f0f1',
-                lightBlue: '#d6e8f5',
-              }
-            },
-            fontSize: {
-                base: '20px',
-                md: '24px',
-                lg: '28px',
-              },
-            fontFamily: {
-                custom: ['Helvetica', 'sans-serif'],
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';">
+  <title>Anna Dehtiarova</title>
+  <link rel="icon" type="image/svg+xml" href="circle.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lightGreen: '#e1f0f1',
+            lightBlue: '#d6e8f5',
           }
+        },
+        fontSize: {
+          base: '20px',
+          md: '24px',
+          lg: '28px',
+        },
+        fontFamily: {
+          custom: ['Helvetica', 'sans-serif'],
         }
-    </script>
-    <style>
-        @font-face {
-            font-family: 'PolySans';
-            src: url('./font/PolySans-Neutral.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'PolySans';
+      src: url('./font/PolySans-Neutral.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .scene {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      cursor: grab;
+      transform: rotateX(15deg) rotateY(150deg); /* Turned left by default */
+    }
+
+    .face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4B5910;
+      background: #C8ED42;
+      border: 1px solid white;
+      user-select: none;
+      flex-direction: column; /* Align text below icons */
+      text-align: center;
+      padding: 10px; /* Added padding */
+    }
+
+    .face i {
+      font-size: 2rem; /* Adjust icon size */
+    }
+
+    .face.front  { transform: translateZ(100px);}
+    .face.back   { transform: rotateY(180deg) translateZ(100px); }
+    .face.right  { transform: rotateY(90deg) translateZ(100px); }
+    .face.left   { transform: rotateY(-90deg) translateZ(100px); }
+    .face.top    { transform: rotateX(90deg) translateZ(100px); }
+    .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    /* Smaller text on the back face */
+    .face.back {
+      font-size: 1rem;
+      text-align: center;
+      padding: 20px; /* Added padding */
+      box-sizing: border-box; /* Ensure padding doesn't affect the size */
+    }
+
+    /* Smaller text and spacing adjustments for other faces */
+    .face i {
+      margin-bottom: 8px; /* Added space between icon and text */
+    }
+
+    .face p {
+      font-size: 0.875rem; /* Smaller font size for text */
+      padding: 0 5px; /* Small padding for text */
+    }
+  </style>
 </head>
-<body>
-    <div class="max-w-[1450px] mx-auto">
+
+<body class="font-custom">
+
+  <!-- Skip Link -->
+  <div class="max-w-[1450px] mx-auto">
     <a href="#main-content" class="sr-only focus:not-sr-only rounded-md border-black border-2 bg-white text-black focus:px-8 focus:py-4 focus:w-[250px] focus:flex focus:justify-center">
-        Skip to main content
+      Skip to main content
     </a>
-    </div>
-    <!-- Navigation Bar -->
-<header class="w-full px-4 md:px-10 lg:px-16">
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="w-full px-4 md:px-10 lg:px-16">
     <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
-        <div class="flex flex-row items-center gap-2">
-            <a href="index.html"><div class="font-bold" aria-label="Anna Dehtiarova's portfolio"><h1>ANNA DEHTIAROVA</h1></div></a>
-        </div>  
-        <div id="navMenu" class="flex flex-row items-center gap-6">
-            <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
-                <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
-            </a>
-            <a href="https://github.com/annadehtiarova" target="_blank" aria-label="Anna's GitHub profile">
-                <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
-            </a>
-        </div> 
+      <div class="flex flex-row items-center gap-2">
+        <a href="index.html"><div class="font-bold" aria-label="Anna Dehtiarova's portfolio"><h1>ANNA DEHTIAROVA</h1></div></a>
+      </div>  
+      <div id="navMenu" class="flex flex-row items-center gap-6">
+        <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
+          <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+        </a>
+        <a href="https://github.com/annadehtiarova" target="_blank" aria-label="Anna's GitHub profile">
+          <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+        </a>
+      </div> 
     </div>
   </header>
 
-    <!-- Main Content -->
-    <div class="w-full px-4 md:px-10 lg:px-16">
-        <div id="main-content" class="max-w-[1450px] mx-auto grid grid-cols-1 grid-rows-auto gap-y-20 justify-items-center
-            md:grid-cols-6 md:grid-rows-auto md:gap-y-36">
-            <a class="image-hover row-start-1 col-span-1 md:col-start-4 md:col-span-5 md:justify-items-center hover:cursor-pointer">
-                <img src="./home/a11y-orange.svg" class="default-image" alt="This portfolio is accessible">
-                <img src="./home/a11y-text-backk.svg" class="hover-image">
-            </a>
-            <!-- Energy App Section -->
-            <a href="energy.html" class="row-start-2 col-span-1 md:col-start-1 md:col-span-3 md:justify-items-center">
-                <img src="./home/phone2.jpg" alt="Project one. Design of a home energy monitoring app to reduce costs and emissions.">
-            </a>
-            
-            <!-- Tenzir Section -->
-            <a href="cyber.html" class="row-start-3 col-span-4 md:col-start-2 md:col-span-4 lg:col-start-2">
-                <img src="./home/web-tenzir.svg" alt="Project two. Website and MVP design for a security data pipeline platform.">
-            </a>
-            
-            <!-- Light Icon Section -->
-            <a href="real.html" class="row-start-4 col-span-4 md:col-start-3 md:col-span-3 lg:col-start-4">
-                <img src="./home/space-usage.jpg" alt="Project three. Redesign of the space utilization dashboard to help decarbonize real estate.">
-            </a>
-            
-            <!-- Political Image Section -->
-            <a href="political.html" class="row-start-5 col-span-2 md:col-start-1 md:col-span-4">
-                <img src="./home/3.png" alt="Project four. Data visualization. Female political representation worldwide.">
-            </a>
-            
-            <!-- Leaves Icon Section -->
-            <a href="nyc.html" class="row-start-6 col-span-1 md:col-start-3 md:col-span-1">
-                <img class="max-[430px]:w-[120px] max-[786px]:w-[240px]" src="./home/leaves.png" alt="Project five. Data visualization. 132 Tree Species in New York City.">
-            </a>
+  <!-- Main Content -->
+  <div class="w-full px-4 md:px-10 lg:px-16">
+    <div id="main-content" class="max-w-[1450px] mx-auto grid grid-cols-1 grid-rows-auto gap-y-20 justify-items-center md:grid-cols-6 md:grid-rows-auto md:gap-y-28">
+      
+      <!-- Accessibility Cube Section -->
+      <div class="w-full flex justify-center items-center h-[400px] row-start-1 md:col-start-4 md:col-span-2">
+        <div class="scene" id="cube" tabindex="0" aria-label="This portfolio is designed with accessibility in mind, including keyboard navigation, screen reader support, high color contrast and accessible media">
+          <div class="face front">
+            Accessibility
+          </div>
+          <div class="face back">
+            This portfolio is designed with accessibility in mind
+          </div>
+          <div class="face right">
+            <i class="fas fa-keyboard"></i><br>
+            <p>Keyboard Navigation</p>
+          </div>
+          <div class="face left">
+            <i class="fas fa-volume-up"></i><br>
+            <p>Screen Reader Support</p>
+          </div>
+          <div class="face top">
+            <i class="fas fa-eye"></i><br>
+            <p>High Color Contrast</p>
+          </div>
+          <div class="face bottom">
+            <i class="fas fa-photo-video"></i><br>
+            <p>Accessible Media</p>
+          </div>
         </div>
+      </div>
+      <a href="energy.html" class="row-start-2 col-span-1 md:col-start-1 md:col-span-3 md:justify-items-center">
+        <img src="./home/phone2.jpg" alt="Project one. Design of a home energy monitoring app to reduce costs and emissions.">
+      </a>
+      <a href="cyber.html" class="row-start-3 col-span-4 md:col-start-2 md:col-span-4 lg:col-start-2">
+        <img src="./home/web-tenzir.svg" alt="Project two. Website and MVP design for a security data pipeline platform.">
+      </a>
+      <a href="real.html" class="row-start-4 col-span-4 md:col-start-3 md:col-span-3 lg:col-start-4">
+        <img src="./home/space-usage.jpg" alt="Project three. Redesign of the space utilization dashboard to help decarbonize real estate.">
+      </a>
+      <a href="political.html" class="row-start-5 col-span-2 md:col-start-1 md:col-span-4">
+        <img src="./home/3.png" alt="Project four. Data visualization. Female political representation worldwide.">
+      </a>
+      <a href="nyc.html" class="row-start-6 col-span-1 md:col-start-3 md:col-span-1">
+        <img class="max-[430px]:w-[120px] max-[786px]:w-[240px]" src="./home/leaves.png" alt="Project five. Data visualization. 132 Tree Species in New York City.">
+      </a>
     </div>
+  </div>
+
+  <!-- Drag Rotation Script -->
+  <script>
+    const cube = document.getElementById("cube");
+    let isDragging = false;
+    let startX, startY;
+    let currentX = 15; // Default rotation on X-axis
+    let currentY = 150; // Default rotation on Y-axis (turn to the left)
+
+    const rotateCube = (deltaX, deltaY) => {
+      currentX += deltaY * 0.5;
+      currentY += deltaX * 0.5;
+      cube.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+    };
+
+    cube.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      cube.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+      rotateCube(deltaX, deltaY);
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      cube.style.cursor = "grab";
+    });
+  </script>
 
 </body>
 </html>
