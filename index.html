@@ -215,10 +215,12 @@
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       cube.style.cursor = "grabbing";
+      e.preventDefault(); // Prevent page scroll
     });
 
     document.addEventListener("touchmove", (e) => {
       if (!isDragging) return;
+      e.preventDefault(); // Prevent page scroll
       const deltaX = e.touches[0].clientX - startX;
       const deltaY = e.touches[0].clientY - startY;
       rotateCube(deltaX, deltaY);
