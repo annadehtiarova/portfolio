@@ -47,6 +47,9 @@
       transform-style: preserve-3d;
       cursor: grab;
       transform: rotateX(15deg) rotateY(150deg); /* Turned left by default */
+      user-select: none;
+      -webkit-user-select: none; /* For Safari */
+      -ms-user-select: none; /* For old versions of Edge */
     }
 
     .face {
@@ -65,6 +68,9 @@
       flex-direction: column; /* Align text below icons */
       text-align: center;
       padding: 10px; /* Added padding */
+      user-select: none;
+      -webkit-user-select: none; /* For Safari */
+     -ms-user-select: none; /* For old versions of Edge */
     }
 
     .face i {
