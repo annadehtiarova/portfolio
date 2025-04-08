@@ -46,10 +46,24 @@
       position: relative;
       transform-style: preserve-3d;
       cursor: grab;
-      transform: rotateX(15deg) rotateY(150deg); /* Turned left by default */
+      transform: rotateX(15deg) rotateY(150deg);
       user-select: none;
-      -webkit-user-select: none; /* For Safari */
-      -ms-user-select: none; /* For old versions of Edge */
+      /* Removed default animation, now activated on hover */
+    }
+
+    /* Smooth backward rotation triggered on hover */
+    .scene:hover {
+      animation: rotate-backward 10s linear infinite; /* 10s duration */
+    }
+
+    /* Keyframes for backward rotation */
+    @keyframes rotate-backward {
+      0% {
+        transform: rotateX(15deg) rotateY(150deg);
+      }
+      100% {
+        transform: rotateX(15deg) rotateY(-210deg); /* Backward rotation */
+      }
     }
 
     .face {
@@ -65,16 +79,19 @@
       background: #C8ED42;
       border: 1px solid white;
       user-select: none;
-      flex-direction: column; /* Align text below icons */
+      flex-direction: column;
       text-align: center;
-      padding: 10px; /* Added padding */
-      user-select: none;
-      -webkit-user-select: none; /* For Safari */
-     -ms-user-select: none; /* For old versions of Edge */
+      padding: 10px;
     }
 
     .face i {
-      font-size: 2rem; /* Adjust icon size */
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .face p {
+      font-size: 0.875rem;
+      padding: 0 5px;
     }
 
     .face.front  { transform: translateZ(100px);}
@@ -84,40 +101,32 @@
     .face.top    { transform: rotateX(90deg) translateZ(100px); }
     .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
 
+
     /* Smaller text on the back face */
     .face.back {
       font-size: 1rem;
-      text-align: center;
-      padding: 20px; /* Added padding */
-      box-sizing: border-box; /* Ensure padding doesn't affect the size */
-    }
-
-    /* Smaller text and spacing adjustments for other faces */
-    .face i {
-      margin-bottom: 8px; /* Added space between icon and text */
-    }
-
-    .face p {
-      font-size: 0.875rem; /* Smaller font size for text */
-      padding: 0 5px; /* Small padding for text */
+      padding: 20px;
+      box-sizing: border-box;
     }
   </style>
 </head>
 
 <body class="font-custom">
 
-  <!-- Skip Link -->
   <div class="max-w-[1450px] mx-auto">
     <a href="#main-content" class="sr-only focus:not-sr-only rounded-md border-black border-2 bg-white text-black focus:px-8 focus:py-4 focus:w-[250px] focus:flex focus:justify-center">
       Skip to main content
     </a>
   </div>
 
-  <!-- Navigation Bar -->
   <header class="w-full px-4 md:px-10 lg:px-16">
     <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
       <div class="flex flex-row items-center gap-2">
-        <a href="index.html"><div class="font-bold" aria-label="Anna Dehtiarova's portfolio"><h1>ANNA DEHTIAROVA</h1></div></a>
+        <a href="index.html">
+          <div class="font-bold" aria-label="Anna Dehtiarova's portfolio">
+            <h1>ANNA DEHTIAROVA</h1>
+          </div>
+        </a>
       </div>  
       <div id="navMenu" class="flex flex-row items-center gap-6">
         <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
@@ -130,12 +139,10 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <div class="w-full px-4 md:px-10 lg:px-16">
     <div id="main-content" class="max-w-[1450px] mx-auto grid grid-cols-1 grid-rows-auto gap-y-20 justify-items-center md:grid-cols-6 md:grid-rows-auto md:gap-y-28">
       
-      <!-- Accessibility Cube Section -->
-      <div class="w-full flex justify-center items-center h-[400px] row-start-1 md:col-start-4 md:col-span-2">
+      <div class="h-[100px] flex justify-center items-center h-[400px] row-start-1 md:col-start-4 md:col-span-2">
         <div class="scene" id="cube" tabindex="0" aria-label="This portfolio is designed with accessibility in mind, including keyboard navigation, screen reader support, high color contrast and accessible media">
           <div class="face front">
             Accessibility
@@ -161,6 +168,7 @@
           </div>
         </div>
       </div>
+
       <a href="energy.html" class="row-start-2 col-span-1 md:col-start-1 md:col-span-3 md:justify-items-center">
         <img src="./home/phone2.jpg" alt="Project one. Design of a home energy monitoring app to reduce costs and emissions.">
       </a>
@@ -178,67 +186,6 @@
       </a>
     </div>
   </div>
-
-  <!-- Drag Rotation Script -->
-  <script>
-    const cube = document.getElementById("cube");
-    let isDragging = false;
-    let startX, startY;
-    let currentX = 15; // Default rotation on X-axis
-    let currentY = 150; // Default rotation on Y-axis (turn to the left)
-
-    const rotateCube = (deltaX, deltaY) => {
-      currentX += deltaY * 0.5;
-      currentY += deltaX * 0.5;
-      cube.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
-    };
-
-    // Mouse events
-    cube.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startX = e.clientX;
-      startY = e.clientY;
-      cube.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      const deltaX = e.clientX - startX;
-      const deltaY = e.clientY - startY;
-      rotateCube(deltaX, deltaY);
-      startX = e.clientX;
-      startY = e.clientY;
-    });
-
-    document.addEventListener("mouseup", () => {
-      isDragging = false;
-      cube.style.cursor = "grab";
-    });
-
-    // Touch events for mobile
-    cube.addEventListener("touchstart", (e) => {
-      isDragging = true;
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      cube.style.cursor = "grabbing";
-      e.preventDefault(); // Prevent page scroll
-    });
-
-    document.addEventListener("touchmove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault(); // Prevent page scroll
-      const deltaX = e.touches[0].clientX - startX;
-      const deltaY = e.touches[0].clientY - startY;
-      rotateCube(deltaX, deltaY);
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-    });
-
-    document.addEventListener("touchend", () => {
-      isDragging = false;
-      cube.style.cursor = "grab";
-    });
-  </script>
 
 </body>
 </html>
