@@ -45,25 +45,22 @@
       height: 200px;
       position: relative;
       transform-style: preserve-3d;
-      cursor: grab;
       transform: rotateX(15deg) rotateY(150deg);
       user-select: none;
-      /* Removed default animation, now activated on hover */
     }
 
-    /* Smooth backward rotation triggered on hover */
-    .scene:hover {
-      animation: rotate-backward 10s linear infinite; /* 10s duration */
-    }
-
-    /* Keyframes for backward rotation */
-    @keyframes rotate-backward {
+    /* Auto rotation only when .rotate is applied */
+    @keyframes rotate-cube {
       0% {
-        transform: rotateX(15deg) rotateY(150deg);
+        transform: rotateX(15deg) rotateY(0deg);
       }
       100% {
-        transform: rotateX(15deg) rotateY(-210deg); /* Backward rotation */
+        transform: rotateX(15deg) rotateY(360deg);
       }
+    }
+
+    .scene.rotate {
+      animation: rotate-cube 16s linear infinite;
     }
 
     .face {
@@ -101,8 +98,6 @@
     .face.top    { transform: rotateX(90deg) translateZ(100px); }
     .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
 
-
-    /* Smaller text on the back face */
     .face.back {
       font-size: 1rem;
       padding: 20px;
@@ -142,8 +137,8 @@
   <div class="w-full px-4 md:px-10 lg:px-16">
     <div id="main-content" class="max-w-[1450px] mx-auto grid grid-cols-1 grid-rows-auto gap-y-20 justify-items-center md:grid-cols-6 md:grid-rows-auto md:gap-y-28">
       
-      <div class="h-[100px] flex justify-center items-center h-[400px] row-start-1 md:col-start-4 md:col-span-2">
-        <div class="scene" id="cube" tabindex="0" aria-label="This portfolio is designed with accessibility in mind, including keyboard navigation, screen reader support, high color contrast and accessible media">
+      <div class="flex justify-center items-center h-[400px] md:h-[250px] row-start-1 md:col-start-4 md:col-span-2">
+        <div class="scene" id="cube" aria-label="This portfolio is designed with accessibility in mind, including keyboard navigation, screen reader support, high color contrast and accessible media">
           <div class="face front">
             Accessibility
           </div>
@@ -169,23 +164,45 @@
         </div>
       </div>
 
-      <a href="energy.html" class="row-start-2 col-span-1 md:col-start-1 md:col-span-3 md:justify-items-center">
+      <a href="energy.html" class="row-start-2 col-span-1 md:col-start-1 md:col-span-3 md:justify-items-center" tabindex="0">
         <img src="./home/phone2.jpg" alt="Project one. Design of a home energy monitoring app to reduce costs and emissions.">
       </a>
-      <a href="cyber.html" class="row-start-3 col-span-4 md:col-start-2 md:col-span-4 lg:col-start-2">
+      <a href="cyber.html" class="row-start-3 col-span-4 md:col-start-2 md:col-span-4 lg:col-start-2" tabindex="0">
         <img src="./home/web-tenzir.svg" alt="Project two. Website and MVP design for a security data pipeline platform.">
       </a>
-      <a href="real.html" class="row-start-4 col-span-4 md:col-start-3 md:col-span-3 lg:col-start-4">
+      <a href="real.html" class="row-start-4 col-span-4 md:col-start-3 md:col-span-3 lg:col-start-4" tabindex="0">
         <img src="./home/space-usage.jpg" alt="Project three. Redesign of the space utilization dashboard to help decarbonize real estate.">
       </a>
-      <a href="political.html" class="row-start-5 col-span-2 md:col-start-1 md:col-span-4">
+      <a href="political.html" class="row-start-5 col-span-2 md:col-start-1 md:col-span-4" tabindex="0">
         <img src="./home/3.png" alt="Project four. Data visualization. Female political representation worldwide.">
       </a>
-      <a href="nyc.html" class="row-start-6 col-span-1 md:col-start-3 md:col-span-1">
+      <a href="nyc.html" class="row-start-6 col-span-1 md:col-start-3 md:col-span-1" tabindex="0">
         <img class="max-[430px]:w-[120px] max-[786px]:w-[240px]" src="./home/leaves.png" alt="Project five. Data visualization. 132 Tree Species in New York City.">
       </a>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cube = document.getElementById("cube");
+
+      // Start rotating on load
+      cube.classList.add("rotate");
+
+      // Detect visibility in viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            cube.classList.add("rotate");
+          } else {
+            cube.classList.remove("rotate");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(cube);
+    });
+  </script>
 
 </body>
 </html>
