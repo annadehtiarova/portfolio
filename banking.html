@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Dehtiarova</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                lightGreen: '#e1f0f1',
+                lightBlue: '#d6e8f5',
+              }
+            },
+            fontSize: {
+                base: '20px',
+                md: '24px',
+                lg: '28px',
+              }
+            }}
+    </script>
+</head>
+<body>
+    <div class="relative">
+        <button 
+        id="hamburger" 
+        class="block invisible max-[440px]:visible absolute top-12 right-8 cursor-pointer">
+        <div class="space-y-1.5">
+          <span class="block w-8 h-1 bg-gray-800"></span>
+          <span class="block w-8 h-1 bg-gray-800"></span>
+          <span class="block w-8 h-1 bg-gray-800"></span>
+        </div>
+        <nav 
+        id="menuDropdown" 
+        class="hidden p-8 text-[18px] flex flex-col gap-6 items-start justify-center absolute top-28 right-0 w-[375px] bg-white"
+      >
+        <a href="index.html" >Work</a>
+        <a href="https://public.tableau.com/app/profile/anna5028/vizzes">Data Vis</a>
+        <a href="about.html" >About</a>
+      </nav>
+      </button>
+    </div>
+    <nav class="py-12 flex flex-row mx-auto justify-between  border-b border-slate-200">
+        <div class="w-[950px] flex flex-row mx-auto justify-between max-[786px]:w-[650px] max-[786px]:px-10  max-[440px]:w-[340px] max-[440px]:px-2">
+            <div class="flex flex-row items-center gap-2">
+                <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA </div></a>
+                <div class="text-md">🇺🇦</div>
+            </div>
+               
+            <div id="navMenu" class="flex flex-row items-center gap-12 max-[440px]:gap-8 max-[440px]:hidden">
+                <a href="index.html"  class="font-semibold hover:font-semibold"><div>Work</div></a>
+                <a href="https://public.tableau.com/app/profile/anna5028/vizzes" class="hover:font-semibold"><div>Data vis</div></a>
+                <a href="about.html"  class="hover:font-semibold"><div>About</div></a>
+            </div>             
+        </div>
+    </nav>
+    </nav>
+    <div class="font-['Figtree'] text-base w-[950px] mx-auto max-[786px]:w-[650px] max-[440px]:w-[340px]">
+        <main class="font-light py-10 flex flex-col justify-center gap-10 max-[768px]:py-10 max-[440px]:gap-10 max-[440px]:py-10">
+            
+            <div class="text-[44px] text-center font-semibold max-[440px]:text-lg">Multi-Platform Finance Management</div>
+            <div>Banq is a UI design project for a modern banking application, tailored for mobile, tablet, and desktop platforms. The project includes a design system and three primary screens: Accounts overview, Account details, and a Spending dashboard.</div>
+            <img  src="bank/8.svg" alt="bank-main">
+            <img  src="bank/bank_ui_1.svg" alt="bank-main">
+            <img  src="bank/bank_ui_2.svg" alt="bank-main">
+            <img  src="bank/bank_ui_3.svg" alt="bank-main">
+        </main>
+        <div class="py-10 grid grid-cols-3 gap-x-8 gap-y-8 max-[440px]:grid-cols-1">
+            <object class="w-full h-full" type="image/svg+xml" data="bank/grid1.svg" alt=""></object>
+            <object class="w-full h-full" type="image/svg+xml" data="bank/grid2.svg" alt=""></object>
+            <object class="w-full h-full" type="image/svg+xml" data="bank/grid3.svg" alt=""></object>
+            <object class="w-full h-full" type="image/svg+xml" data="bank/grid4.svg" alt=""></object>
+            <object class="w-full h-full" type="image/svg+xml" data="bank/grid5.svg" alt=""></object>
+            <object class="w-full h-full" type="image/svg+xml" data="bank/grid6.svg" alt=""></object>
+        </div>
+        <div class="py-10 flex flex-col gap-2">
+            <div class="text-lg font-semibold max-[440px]:text-md">Other projects:</div>
+            <a class="underline font-light text-md max-[440px]:text-md" href="cyber.html"><div>Data Pipelines for Security Teams</div></a>
+            <a class="underline font-light text-md max-[440px]:text-md" href="real.html"><div>ESG Data Management 
+                for Real Estate</div></a>
+            <!-- <a class="underline text-md max-[440px]:text-md" href="flights.html"><div>Reimagining Flight Booking</div></a> -->
+        </div>
+        
+    </div>
+    <footer class=" py-12 flex flex-row justify-center gap-10 max-[440px]:flex-col max-[440px]:items-center border-t border-slate-200  ">
+        <div class="flex flex-row items-center gap-2">
+        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
+        <a href="mailto:anna.dehtiarova@gmail.com" target="_blank" >Email</a>
+        </div>
+        <div class="flex flex-row items-center gap-2">
+            <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
+        <a href="https://github.com/annadehtiarova"  target="_blank" >GitHub</a>
+        </div>
+        <div class="flex flex-row items-center gap-2">
+        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
+        <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" >LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
