@@ -1,160 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anna Dehtiarova</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anna Dehtiarova</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
           },
         },
-      },
-    };
-  </script>
+      };
+    </script>
+    <style>
+      html,
+      body {
+        height: 100vh;
+        margin: 0;
+      }
+      html {
+        overflow-x: hidden;
+      }
 
-  <style>
-    html, body {
-      height: 100vh;
-      margin: 0;
-    }
-    html {
-      overflow-x: hidden;
-    }
-  </style>
-</head>
-<body class="bg-white text-black font-sans">
+      /* Base styles for projectCards */
+      #projectCards {
+        position: fixed;
+        right: 0;
+        left: auto;
+        width: auto !important;
+        max-width: none !important;
+        opacity: 0;
+        pointer-events: none;
+        transition: top 0.7s ease-in-out, opacity 0.7s ease-in-out;
+        height: calc(100vh - 56px);
+        z-index: 40;
+        top: 100vh; /* start offscreen bottom */
+      }
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 w-full bg-white z-50">
-    <div class="max-w-[1450px] mx-auto px-4 py-10 flex justify-between items-center">
-      <div class="flex flex-row items-center gap-2">
-        <a href="index.html">
-          <div class="font-bold" aria-label="Anna Dehtiarova's portfolio">
-            <h1>ANNA DEHTIAROVA</h1>
-          </div>
-        </a>
-      </div>
-      <nav class="flex space-x-6 text-base sm:text-lg">
-        <div class="flex flex-row items-center gap-6">
-          <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
-            <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
-          </a>
-          <a href="https://github.com/annadehtiarova" target="_blank" aria-label="Anna's GitHub profile">
-            <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+      #projectCards.visible {
+        opacity: 1;
+        pointer-events: auto;
+        top: 56px; /* slide in from bottom */
+      }
+
+      /* Tablet and mobile adjustments */
+      @media (max-width: 1023px) {
+        #projectCards {
+          right: 0 !important;
+          left: auto !important;
+          width: auto !important;
+          max-width: none !important;
+          /* Keep top controlled by JS for slide effect */
+        }
+
+        #projectCards > div {
+          flex-direction: column !important;
+          align-items: flex-end !important;
+          justify-content: flex-end !important;
+          gap: 1rem !important;
+          height: auto !important;
+        }
+        #projectCards > div > div {
+          width: 70vw !important; /* a bit wider on tablet */
+          height: 35vh !important;
+          max-width: 100% !important;
+        }
+        #projectCards > div > div img {
+          object-fit: contain !important;
+          width: 100% !important;
+          height: 100% !important;
+        }
+      }
+
+      /* Desktop styles */
+      @media (min-width: 1024px) {
+        #projectCards {
+          left: 50% !important;
+          right: auto !important;
+          transform: translateX(-50%);
+          /* top handled by JS */
+        }
+
+        #projectCards > div {
+          flex-direction: row !important;
+          align-items: flex-end !important;
+          justify-content: flex-end !important;
+          gap: 3rem !important;
+          height: 100%;
+          max-width: 100% !important;
+        }
+        #projectCards > div > div {
+          display: flex !important;
+          flex-direction: column !important;
+          width: auto !important;
+          height: auto !important;
+          overflow: hidden;
+        }
+        #projectCards > div > div:nth-child(1) {
+          width: clamp(200px, 30vw, 400px) !important;
+          height: 480px !important;
+        }
+        #projectCards > div > div:nth-child(2) {
+          width: clamp(300px, 50vw, 650px) !important;
+          height: 650px !important;
+        }
+        #projectCards > div > div:nth-child(3) {
+          width: clamp(200px, 30vw, 400px) !important;
+          height: 480px !important;
+        }
+        #projectCards > div > div img {
+          object-fit: cover !important;
+          width: 100% !important;
+          height: 100% !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black font-sans">
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full bg-white z-50">
+      <div
+        class="max-w-[1450px] mx-auto px-4 py-10 flex justify-between items-center"
+      >
+        <div class="flex flex-row items-center gap-2">
+          <a href="index.html">
+            <div class="font-bold" aria-label="Anna Dehtiarova's portfolio">
+              <h1>ANNA DEHTIAROVA</h1>
+            </div>
           </a>
         </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="fixed left-0 w-full z-40 bg-white" style="top: 56px; height: calc(100vh - 56px);">
-    <div class="max-w-[1450px] mx-auto px-4 h-full flex items-center">
-      <h1 class="lg:text-[60px] md:text-[48px] text-[32px] font-regular sm:leading-[1.4]">
-        Hi, I’m Anna—a product designer based in Berlin. Driven by passion for both data and design, I craft user-friendly products that deliver valuable, data-driven insights.
-      </h1>
-    </div>
-  </section>
-
-  <!-- PROJECT CARDS -->
-  <div id="projectCards" class="fixed left-0 z-40 opacity-0 transition-all duration-700 ease-in-out w-full pointer-events-none"
-    style="top: 100vh; height: calc(100vh - 56px);">
-    <div class="max-w-[1450px] mx-auto px-4 h-full flex flex-col lg:flex-row justify-center items-end lg:gap-x-12 lg:pb-20 pb-0 pointer-events-auto gap-6">
-
-      <!-- Project 1 -->
-      <div
-        class="overflow-hidden flex items-end justify-end"
-        style="width: clamp(200px, 30vw, 400px); height: clamp(300px, 40vh, 480px);"
-      >
-        <a href="real.html" class="w-full h-full">
-          <img src="home/Project_2.jpg" alt="Project 1" class="w-full h-full object-cover" />
-        </a>
+        <nav class="flex space-x-6 text-base sm:text-lg">
+          <div class="flex flex-row items-center gap-6">
+            <a
+              href="https://www.linkedin.com/in/annadehtiarova"
+              target="_blank"
+              aria-label="Anna's LinkedIn profile"
+            >
+              <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+            </a>
+            <a
+              href="https://github.com/annadehtiarova"
+              target="_blank"
+              aria-label="Anna's GitHub profile"
+            >
+              <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+            </a>
+          </div>
+        </nav>
       </div>
+    </header>
 
-      <!-- Project 2 -->
-      <div
-        class="overflow-hidden flex items-end justify-end"
-        style="width: clamp(300px, 50vw, 650px); height: clamp(400px, 60vh, 650px);"
-      >
-        <a href="energy.html" class="w-full h-full">
-          <img src="home/project_1.jpg" alt="Project 2" class="w-full h-full object-cover" />
-        </a>
+    <!-- HERO SECTION -->
+    <section
+      class="fixed left-0 w-full z-40 bg-white"
+      style="top: 56px; height: calc(100vh - 56px)"
+    >
+      <div class="max-w-[1450px] mx-auto px-4 h-full flex items-center">
+        <h1
+          class="lg:text-[60px] md:text-[48px] text-[32px] font-regular sm:leading-[1.4]"
+        >
+          Hi, I’m Anna—a product designer based in Berlin. Driven by passion for
+          both data and design, I craft user-friendly products that deliver
+          valuable, data-driven insights.
+        </h1>
       </div>
+    </section>
 
-      <!-- Project 3 -->
+    <!-- PROJECT CARDS -->
+    <div id="projectCards">
       <div
-        class="overflow-hidden flex items-end justify-end"
-        style="width: clamp(200px, 30vw, 400px); height: clamp(300px, 40vh, 480px);"
+        class="max-w-[1450px] mx-auto px-4 h-full flex flex-col lg:flex-row justify-end items-end gap-4 lg:gap-x-12 lg:pb-20 pb-0"
       >
-        <a href="cyber.html" class="w-full h-full">
-          <img src="home/Project_3.jpg" alt="Project 3" class="w-full h-full object-cover" />
-        </a>
-      </div>
+        <!-- Project 1 -->
+        <div
+          class="overflow-hidden flex items-end justify-end w-[60vw] h-[30vh] lg:w-[clamp(200px,30vw,400px)] lg:h-[480px]"
+        >
+          <a href="real.html" class="w-full h-full">
+            <img
+              src="home/Project_2.jpg"
+              alt="Project 1"
+              class="w-full h-full object-contain"
+            />
+          </a>
+        </div>
 
+        <!-- Project 2 -->
+        <div
+          class="overflow-hidden flex items-end justify-end w-[60vw] h-[30vh] lg:w-[clamp(300px,50vw,650px)] lg:h-[650px]"
+        >
+          <a href="energy.html" class="w-full h-full">
+            <img
+              src="home/project_1.jpg"
+              alt="Project 2"
+              class="w-full h-full object-contain"
+            />
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="overflow-hidden flex items-end justify-end w-[60vw] h-[30vh] lg:w-[clamp(200px,30vw,400px)] lg:h-[480px]"
+        >
+          <a href="cyber.html" class="w-full h-full">
+            <img
+              src="home/Project_3.jpg"
+              alt="Project 3"
+              class="w-full h-full object-contain"
+            />
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
 
-<<<<<<< HEAD
-  <!-- Scrollable Content -->
-  <div class="px-4 max-w-4xl mx-auto" style="padding-top: calc(100vh + 56px); height: 1500px;">
-    <p class="text-gray-600">Scroll down to trigger project cards. Scroll up to hide them again.</p>
-  </div>
-=======
->>>>>>> db71b3c88b2af182ab2a5b62542b24cd8ab2bc79
+    <!-- Scrollable Content -->
+    <div
+      class="px-4 max-w-4xl mx-auto"
+      style="padding-top: calc(100vh + 56px); height: 1500px"
+    ></div>
 
-  <script>
-    const projectCards = document.getElementById('projectCards');
-    const navbarHeight = 56; // px
-    const triggerScrollStart = 150;
-    let lastScroll = 0;
+    <!-- SCROLL SCRIPT -->
+    <script>
+      const projectCards = document.getElementById("projectCards");
+      const navbarHeight = 56;
+      const triggerScrollStart = 150;
+      let lastScroll = 0;
 
-    function showProjects() {
-      projectCards.style.top = navbarHeight + 'px';
-      projectCards.style.opacity = '1';
-      projectCards.style.pointerEvents = 'auto';
-    }
-
-    function hideProjects() {
-      projectCards.style.top = '100vh';
-      projectCards.style.opacity = '0';
-      projectCards.style.pointerEvents = 'none';
-    }
-
-    function handleScroll() {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > triggerScrollStart && currentScroll > lastScroll) {
-        showProjects();
-        sessionStorage.setItem('projectsShown', 'true'); // save visibility
-      } else if (currentScroll < lastScroll - 10) {
-        hideProjects();
+      function showProjects() {
+        projectCards.classList.add("visible");
       }
 
-      lastScroll = currentScroll;
-    }
-
-    // On first page load or after back-navigation
-    window.addEventListener('load', () => {
-      if (sessionStorage.getItem('projectsShown') === 'true') {
-        showProjects();
-        // Optional: scroll slightly to ensure nav logic kicks in
-        window.scrollTo({ top: triggerScrollStart + 1 });
-      } else {
-        handleScroll(); // fallback
+      function hideProjects() {
+        projectCards.classList.remove("visible");
       }
-    });
 
-    window.addEventListener('scroll', handleScroll);
-  </script>
+      function handleScroll() {
+        const currentScroll = window.scrollY;
 
-</body>
+        if (currentScroll > triggerScrollStart && currentScroll > lastScroll) {
+          showProjects();
+          sessionStorage.setItem("projectsShown", "true");
+        } else if (currentScroll < lastScroll - 10) {
+          hideProjects();
+        }
+
+        lastScroll = currentScroll;
+      }
+
+      window.addEventListener("load", () => {
+        if (sessionStorage.getItem("projectsShown") === "true") {
+          showProjects();
+          window.scrollTo({ top: triggerScrollStart + 1 });
+        } else {
+          handleScroll();
+        }
+      });
+
+      window.addEventListener("scroll", handleScroll);
+    </script>
+  </body>
 </html>
