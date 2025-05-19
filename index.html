@@ -2,206 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anna Dehtiarova</title>
-  <link rel="icon" type="image/svg+xml" href="circle.svg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            lightGreen: '#e1f0f1',
-            lightBlue: '#d6e8f5',
-          }
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
         },
-        fontSize: {
-          base: '20px',
-          md: '24px',
-          lg: '28px',
-        },
-        fontFamily: {
-          custom: ['Helvetica', 'sans-serif'],
-        }
-      }
-    }
+      },
+    };
   </script>
 
   <style>
-    @font-face {
-      font-family: 'PolySans';
-      src: url('./font/PolySans-Neutral.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
+    html, body {
+      height: 100vh;
+      margin: 0;
     }
-
-    .scene {
-      width: 200px;
-      height: 200px;
-      position: relative;
-      transform-style: preserve-3d;
-      transform: rotateX(15deg) rotateY(150deg);
-      user-select: none;
-    }
-
-    /* Auto rotation only when .rotate is applied */
-    @keyframes rotate-cube {
-      0% {
-        transform: rotateX(15deg) rotateY(0deg);
-      }
-      100% {
-        transform: rotateX(15deg) rotateY(360deg);
-      }
-    }
-
-    .scene.rotate {
-      animation: rotate-cube 16s linear infinite;
-    }
-
-    .face {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #4B5910;
-      background: #C8ED42;
-      border: 1px solid white;
-      user-select: none;
-      flex-direction: column;
-      text-align: center;
-      padding: 10px;
-    }
-
-    .face i {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .face p {
-      font-size: 0.875rem;
-      padding: 0 5px;
-    }
-
-    .face.front  { transform: translateZ(100px);}
-    .face.back   { transform: rotateY(180deg) translateZ(100px); }
-    .face.right  { transform: rotateY(90deg) translateZ(100px); }
-    .face.left   { transform: rotateY(-90deg) translateZ(100px); }
-    .face.top    { transform: rotateX(90deg) translateZ(100px); }
-    .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-    .face.back {
-      font-size: 1rem;
-      padding: 20px;
-      box-sizing: border-box;
+    html {
+      overflow-x: hidden;
     }
   </style>
 </head>
+<body class="bg-white text-black font-sans">
 
-<body class="font-custom">
-
-  <div class="max-w-[1450px] mx-auto">
-    <a href="#main-content" class="sr-only focus:not-sr-only rounded-md border-black border-2 bg-white text-black focus:px-8 focus:py-4 focus:w-[250px] focus:flex focus:justify-center">
-      Skip to main content
-    </a>
-  </div>
-
-  <header class="w-full px-4 md:px-10 lg:px-16">
-    <div class="max-w-[1450px] mx-auto flex flex-row justify-between py-12">
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 w-full bg-white z-50">
+    <div class="max-w-[1450px] mx-auto px-4 py-10 flex justify-between items-center">
       <div class="flex flex-row items-center gap-2">
         <a href="index.html">
           <div class="font-bold" aria-label="Anna Dehtiarova's portfolio">
             <h1>ANNA DEHTIAROVA</h1>
           </div>
         </a>
-      </div>  
-      <div id="navMenu" class="flex flex-row items-center gap-6">
-        <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
-          <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
-        </a>
-        <a href="https://github.com/annadehtiarova" target="_blank" aria-label="Anna's GitHub profile">
-          <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
-        </a>
-      </div> 
+      </div>
+      <nav class="flex space-x-6 text-base sm:text-lg">
+        <div class="flex flex-row items-center gap-6">
+          <a href="https://www.linkedin.com/in/annadehtiarova" target="_blank" aria-label="Anna's LinkedIn profile">
+            <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+          </a>
+          <a href="https://github.com/annadehtiarova" target="_blank" aria-label="Anna's GitHub profile">
+            <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <div class="w-full px-4 md:px-10 lg:px-16">
-    <div id="main-content" class="max-w-[1450px] mx-auto grid grid-cols-1 grid-rows-auto gap-y-20 justify-items-center md:grid-cols-6 md:grid-rows-auto md:gap-y-28">
-      
-      <!-- <div class="flex justify-center items-center h-[400px] md:h-[250px] row-start-1 md:col-start-4 md:col-span-2">
-        <div class="scene" id="cube" aria-label="This portfolio is designed with accessibility in mind, including keyboard navigation, screen reader support, high color contrast and accessible media">
-          <div class="face front">
-            Accessibility
-          </div>
-          <div class="face back">
-            This portfolio is designed with accessibility in mind
-          </div>
-          <div class="face right">
-            <i class="fas fa-keyboard"></i><br>
-            <p>Keyboard Navigation</p>
-          </div>
-          <div class="face left">
-            <i class="fas fa-volume-up"></i><br>
-            <p>Screen Reader Support</p>
-          </div>
-          <div class="face top">
-            <i class="fas fa-eye"></i><br>
-            <p>High Color Contrast</p>
-          </div>
-          <div class="face bottom">
-            <i class="fas fa-photo-video"></i><br>
-            <p>Accessible Media</p>
-          </div>
-        </div>
-      </div> -->
+  <!-- HERO SECTION -->
+  <section class="fixed left-0 w-full z-40 bg-white" style="top: 56px; height: calc(100vh - 56px);">
+    <div class="max-w-[1450px] mx-auto px-4 h-full flex items-center">
+      <h1 class="lg:text-[60px] md:text-[48px] text-[32px] font-regular sm:leading-[1.4]">
+        Hi, I’m Anna—a product designer based in Berlin. Driven by passion for both data and design, I craft user-friendly products that deliver valuable, data-driven insights.
+      </h1>
+    </div>
+  </section>
 
-      <a href="energy.html" class="row-start-2 col-span-1 md:col-start-1 md:col-span-3 md:justify-items-center" tabindex="0">
-        <img src="./home/phone2.jpg" alt="Project one. Design of a home energy monitoring app to reduce costs and emissions.">
-      </a>
-      <a href="cyber.html" class="row-start-3 col-span-4 md:col-start-2 md:col-span-4 lg:col-start-2" tabindex="0">
-        <img src="./home/web-tenzir.svg" alt="Project two. Website and MVP design for a security data pipeline platform.">
-      </a>
-      <a href="real.html" class="row-start-4 col-span-4 md:col-start-3 md:col-span-3 lg:col-start-4" tabindex="0">
-        <img src="./home/space-usage.jpg" alt="Project three. Redesign of the space utilization dashboard to help decarbonize real estate.">
-      </a>
-      <a href="political.html" class="row-start-5 col-span-2 md:col-start-1 md:col-span-4" tabindex="0">
-        <img src="./home/3.png" alt="Project four. Data visualization. Female political representation worldwide.">
-      </a>
-      <a href="nyc.html" class="row-start-6 col-span-1 md:col-start-3 md:col-span-1" tabindex="0">
-        <img class="max-[430px]:w-[120px] max-[786px]:w-[240px]" src="./home/leaves.png" alt="Project five. Data visualization. 132 Tree Species in New York City.">
-      </a>
+  <!-- PROJECT CARDS -->
+  <div id="projectCards" class="fixed left-0 z-40 opacity-0 transition-all duration-700 ease-in-out w-full pointer-events-none"
+    style="top: 100vh; height: calc(100vh - 56px);">
+    <div class="max-w-[1450px] mx-auto px-4 h-full flex flex-col lg:flex-row justify-center items-end lg:gap-x-12 lg:pb-20 pb-0 pointer-events-auto gap-6">
+
+      <!-- Project 1 -->
+      <div
+        class="overflow-hidden flex items-end justify-end"
+        style="width: clamp(200px, 30vw, 400px); height: clamp(300px, 40vh, 480px);"
+      >
+        <a href="real.html" class="w-full h-full">
+          <img src="home/Project_2.jpg" alt="Project 1" class="w-full h-full object-cover" />
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+      <div
+        class="overflow-hidden flex items-end justify-end"
+        style="width: clamp(300px, 50vw, 650px); height: clamp(400px, 60vh, 650px);"
+      >
+        <a href="energy.html" class="w-full h-full">
+          <img src="home/project_1.jpg" alt="Project 2" class="w-full h-full object-cover" />
+        </a>
+      </div>
+
+      <!-- Project 3 -->
+      <div
+        class="overflow-hidden flex items-end justify-end"
+        style="width: clamp(200px, 30vw, 400px); height: clamp(300px, 40vh, 480px);"
+      >
+        <a href="cyber.html" class="w-full h-full">
+          <img src="home/Project_3.jpg" alt="Project 3" class="w-full h-full object-cover" />
+        </a>
+      </div>
+
     </div>
   </div>
 
+
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cube = document.getElementById("cube");
+    const projectCards = document.getElementById('projectCards');
+    const navbarHeight = 56; // px
+    const triggerScrollStart = 150;
+    let lastScroll = 0;
 
-      // Start rotating on load
-      cube.classList.add("rotate");
+    function showProjects() {
+      projectCards.style.top = navbarHeight + 'px';
+      projectCards.style.opacity = '1';
+      projectCards.style.pointerEvents = 'auto';
+    }
 
-      // Detect visibility in viewport
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            cube.classList.add("rotate");
-          } else {
-            cube.classList.remove("rotate");
-          }
-        });
-      }, { threshold: 0.2 });
+    function hideProjects() {
+      projectCards.style.top = '100vh';
+      projectCards.style.opacity = '0';
+      projectCards.style.pointerEvents = 'none';
+    }
 
-      observer.observe(cube);
+    function handleScroll() {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > triggerScrollStart && currentScroll > lastScroll) {
+        showProjects();
+        sessionStorage.setItem('projectsShown', 'true'); // save visibility
+      } else if (currentScroll < lastScroll - 10) {
+        hideProjects();
+      }
+
+      lastScroll = currentScroll;
+    }
+
+    // On first page load or after back-navigation
+    window.addEventListener('load', () => {
+      if (sessionStorage.getItem('projectsShown') === 'true') {
+        showProjects();
+        // Optional: scroll slightly to ensure nav logic kicks in
+        window.scrollTo({ top: triggerScrollStart + 1 });
+      } else {
+        handleScroll(); // fallback
+      }
     });
+
+    window.addEventListener('scroll', handleScroll);
   </script>
 
 </body>
