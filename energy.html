@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Dehtiarova</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                lightGreen: '#e1f0f1',
+                lightBlue: '#d6e8f5',
+              }
+            },
+            fontSize: {
+                base: '20px',
+                md: '24px',
+                lg: '28px',
+              }
+            }}
+    </script>
+</head>
+<body>
+    
+   
+    <nav  class="py-12 flex flex-row mx-auto justify-between border-b border-slate-200">
+        <div class="w-[950px] flex flex-row mx-auto justify-between max-[786px]:w-[650px] max-[786px]:px-10  max-[440px]:w-[340px] max-[440px]:px-2">
+        <div class="flex flex-row items-center gap-2">
+            <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA </div></a>
+            <div class="text-md">🇺🇦</div>
+        </div>  
+        <div id="navMenu" class="flex flex-row items-center gap-12 max-[440px]:gap-8 max-[440px]:hidden">
+            <div class="flex flex-row items-center gap-6">
+            <a
+              href="https://www.linkedin.com/in/annadehtiarova"
+              target="_blank"
+              aria-label="Anna's LinkedIn profile"
+            >
+              <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+            </a>
+            <a
+              href="https://github.com/annadehtiarova"
+              target="_blank"
+              aria-label="Anna's GitHub profile"
+            >
+              <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+            </a>
+          </div>
+        </div> 
+    </div>
+    </nav>
+    <div class="font-['Figtree'] text-base w-[950px] mx-auto max-[786px]:w-[650px] max-[440px]:w-[340px]">
+        <main class="font-light py-8 flex flex-col justify-center gap-20 max-[768px]:py-10 max-[440px]:gap-10 max-[440px]:py-10">
+            <div class="mx-auto font-bold">PowerTrack</div>
+            <div class="text-[44px] text-center font-semibold max-[440px]:text-lg">Design of an energy management app to reduce energy costs and carbon emissions</div>
+            <img src="energy/key screens.svg" alt="mock">
+            <div class="text-center text-lg font-semibold max-[440px]:text-md">Overview</div>
+            <div>PowerTrack app connects with smart plugs to give users real-time control and insights into their home energy consumption. It tracks usage at the device level, identifies inefficiencies, and provides actionable recommendations to reduce energy waste and lower utility bills.</div>
+            <div class="grid grid-cols-2 max-[440px]:flex-col max-[440px]:grid-cols-1 gap-10 max-[440px]:gap-10 ">
+                    <div class="grid grid-cols-1 gap-2">
+                    <div class="text-xl font-semibold text-md max-[440px]:text-base">Problem</div>
+                    <div>Most homeowners have little to no visibility into how much energy individual appliances consume. Without this data, it's difficult to identify which devices are inefficient or running unnecessarily—leading to energy waste, higher costs, and avoidable environmental impact.</div>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-2">
+                    <div class="text-xl font-semibold text-md max-[440px]:text-base">Solution</div>
+                    <div>PowerTrack app leverages smart plug technology to monitor energy use on a per-device basis. It gives users the ability to control devices remotely, track usage trends, and receive personalized tips to reduce consumption—making energy management smarter, easier, and more sustainable.</div>
+                </div>
+                
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+                    <div class="text-xl font-semibold text-md max-[440px]:text-base">User story</div>
+                    <div>Given the lack of direct user research, I created the user story using a hypothetical persona approach, based on common assumptions about the target audience of a smart home energy management app. I considered typical motivations such as reducing energy bills, managing appliances efficiently, and living more sustainably.</div>
+                   
+                   <div class="pt-8">
+                    <div><span class="font-bold">As a homeowner</span> concerned about energy usage and costs,</div>
+                   <div><span class="font-bold">I want to</span> monitor and control the energy consumption of individual appliances via smart plugs,</div>
+                   <div><span class="font-bold">so that</span> I can identify energy-wasting devices, reduce my electricity bill, and contribute to a more sustainable lifestyle.</div>
+                   </div>
+                </div>
+                 
+            <div class="flex flex-col gap-2">
+                <div class="font-semibold text-md max-[440px]:text-base">User flows</div>
+                <div>I focused on the app’s core functions: viewing energy usage, turning devices on/off, setting usage limits, receiving notifications, and viewing trends. I designed user flows by mapping out the simplest, most intuitive paths a user would take to complete each task—starting from the home screen and minimizing steps. Common UI patterns and logical grouping were used to keep the experience smooth and goal-driven.</div>
+                <img src="energy/flow.svg" alt="mock" class="pt-8">
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="font-semibold text-md max-[440px]:text-base">Design system</div>
+                <div>To ensure consistency and simplicity, I developed a minimal design system focused on essential UI elements such as color palette, typography, buttons, and icons.</div>
+                <img src="energy/Design system.svg" alt="affinity_map">
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="font-semibold text-md max-[440px]:text-base">Prototype</div>
+                <div>I built the prototype to visualize the key user flows—viewing usage, controlling devices, setting limits, and seeing trends. Using low- to mid-fidelity wireframes, I focused on layout, navigation, and core interactions. The goal was to quickly test usability and iterate based on feedback, even without full user data.</div>
+                <video src="energy/proto-5.mp4" class="pt-8 w-full h-full object-cover border-none shadow-none" autoplay></video>
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="font-semibold text-md max-[440px]:text-base">Testing</div>
+                <div>I used Userbrain to remotely test the prototype with real users. Testers were given tasks based on key app functions—like checking device energy usage or setting a usage limit. Their screen recordings, voice feedback, and task completion data helped identify usability issues such as unclear labels or navigation friction. Insights from these sessions guided refinements to improve clarity and flow.</div>
+                <video src="energy/test-3.mp4" class="pt-8 w-full h-full object-cover border-none shadow-none" autoplay></video>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                <div class="font-semibold text-md max-[440px]:text-base">Reflection</div>
+                <div>Working on this app highlighted the importance of balancing functionality with simplicity, especially when dealing with technical features like smart plugs and energy data. Despite limited initial research, creating user stories and flows based on likely user goals helped maintain a user-centered approach. Prototyping brought the concept to life, and testing with Userbrain provided valuable real-world feedback that revealed small but impactful usability issues. This process reinforced the value of early testing, iterative design, and focusing on clarity to support user confidence and control in managing their home energy.</div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <div class="text-lg font-semibold max-[440px]:text-md">Other projects:</div>
+                <a class="underline text-md max-[440px]:text-md" href="real.html"><div>Redesign of the space utilization dashboard to help decarbonize real estate</div></a>
+                <a class="underline text-md max-[440px]:text-md" href="cyber.html"><div>Design of a security data pipeline platform to simplify workflows and enhance security operations</div>
+           
+            </div>
+            
+        </main>
+        
+    </div>
+    <footer class=" py-12 flex flex-row justify-center gap-10 max-[440px]:flex-col max-[440px]:items-center border-t border-slate-200  ">
+        <div class="flex flex-row items-center gap-2">
+        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
+        <a href="mailto:anna.dehtiarova@gmail.com" target="_blank" >Email</a>
+        </div>
+        <div class="flex flex-row items-center gap-2">
+            <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
+        <a href="https://github.com/annadehtiarova"  target="_blank" >GitHub</a>
+        </div>
+        <div class="flex flex-row items-center gap-2">
+        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
+        <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" >LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
