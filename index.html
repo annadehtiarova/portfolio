@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Dehtiarova</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="home/self-image.png">
+
     <meta property="og:image" content="https://www.annadehtiarova.com/open-graph/og-image.png" />
     <meta property="og:url" content="https://www.annadehtiarova.com" />
     <meta property="og:type" content="website" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
           theme: {
@@ -29,88 +34,136 @@
                 base: '20px',
                 md: '24px',
                 lg: '28px',
-              },
+            },
             fontFamily: {
                 custom: ['PolySans', 'sans-serif'],
             }
-            }}
+          }
+        }
     </script>
+
     <style>
         @font-face {
             font-family: 'PolySans';
-            src: url('./font/PolySans-Neutral.ttf') format ('truetype');
+            src: url('./font/PolySans-Neutral.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
     </style>
-    
 </head>
-<body>
-    
-    <nav  class="py-12 flex flex-row mx-auto justify-between border-b border-slate-200">
-        <div class="w-[950px] flex flex-row mx-auto justify-between max-[820px]:w-[650px] max-[786px]:px-10  max-[440px]:w-[340px] max-[440px]:px-2">
-        <div class="flex flex-row items-center gap-2">
-            <a href="index.html"><div class="font-bold">ANNA DEHTIAROVA </div></a>
-            <div class="text-md">🇺🇦</div>
-        </div>  
-        <div id="navMenu" class="flex flex-row items-center gap-12 max-[440px]:gap-8 max-[440px]:hidden">
-            <div class="flex flex-row items-center gap-6">
-            <a
-              href="https://www.linkedin.com/in/annadehtiarova"
-              target="_blank"
-              aria-label="Anna's LinkedIn profile"
-            >
-              <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+
+<body class="font-['Figtree'] text-base">
+
+    <!-- NAVIGATION -->
+    <nav class="py-12 border-b border-slate-200">
+        <div class="max-w-[950px] mx-auto px-6 flex justify-between items-center">
+
+            <a href="index.html" class="font-bold">
+                ANNA DEHTIAROVA
             </a>
-            <a
-              href="https://github.com/annadehtiarova"
-              target="_blank"
-              aria-label="Anna's GitHub profile"
-            >
-              <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
-            </a>
-          </div>
-        </div> 
-    </div>
+
+            <div class="flex items-center gap-6">
+                <a
+                  href="https://www.linkedin.com/in/annadehtiarova"
+                  target="_blank"
+                  aria-label="Anna's LinkedIn profile"
+                >
+                  <i class="fab fa-linkedin text-[20px] hover:text-gray-700"></i>
+                </a>
+
+                <a
+                  href="https://github.com/annadehtiarova"
+                  target="_blank"
+                  aria-label="Anna's GitHub profile"
+                >
+                  <i class="fab fa-github text-[20px] hover:text-gray-700"></i>
+                </a>
+            </div>
+
+        </div>
     </nav>
 
-    <div class="font-['Figtree'] text-base w-[950px] mx-auto max-[820px]:w-[650px] max-[440px]:w-[340px] max-[440px]:px-0 max-[786px]:px-10">
-        
-        <header class="py-24 mx-auto justify-center gap-20 max-[768px]:py-10 max-[440px]:gap-10 max-[440px]:py-10 max-[820px]:w-[650px] max-[440px]:w-[340px]">
-            <div class="text-[56px] py-12 font-semibold text-center max-[440px]:text-[36px] max-[820px]:text-[40px]">Hi, I’m Anna—a UX/AI/Data Designer and Researcher  based in Berlin. </div>
-            <!-- <div class="mx-auto text-center my-8 p-4 w-[200px] border rounded-[40px] border-slate-200">View my work</div> -->
-        <main class="justify-center py-16 grid grid-cols-2 justify-center gap-8 max-[820px]:grid-cols-2 max-[820px]:w-[650px] max-[440px]:w-[340px] max-[440px]:grid-cols-1 max-[768px]:py-10 max-[440px]:gap-10 max-[440px]:py-10">
-           
-            <div class="flex flex-col justify-center gap-8">
-            <a href="cyber.html" class="hover:cursor-pointer rounded-[40px] bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><img class="w-full h-full"  src="home/cyber.svg" alt="mock"></a>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="max-w-[950px] mx-auto px-6">
+
+        <!-- HEADER -->
+        <header class="py-24 md:py-20">
+            <div class="text-[28px] md:text-[42px] leading-tight text-left">
+                Product designer with a background in B2B platforms, now focused on building intuitive B2C experiences. 
+                I use AI-augmented workflows to prototype faster, explore ideas quickly, and ship better products.
             </div>
-            <div class="flex flex-col justify-center gap-8">
-            <a href="real.html" class="rounded-lg bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><object class="w-full h-full pointer-events-none"  data="home/real.svg" alt="mock"></object></a>
+        </header>
+
+
+        <!-- PROJECT GRID -->
+        <main class="py-16 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Lenn Project (Responsive Image Swap) -->
+            <div class="md:col-span-2">
+                <a href="https://lennapp.com">
+                    <picture>
+                        <!-- Desktop -->
+                        <source 
+                            media="(min-width: 768px)" 
+                            srcset="home/lenn-project.svg"
+                        >
+                        <!-- Mobile (default) -->
+                        <img 
+                            src="home/lenn-mobile.svg" 
+                            alt="Lenn project preview"
+                            class="w-full h-auto"
+                        >
+                    </picture>
+                </a>
             </div>
-            <div class="flex flex-col justify-center gap-8">
-                <a href="energy.html" class=" bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><object class="w-full h-full pointer-events-none"  data="home/energy-cover.svg" alt="mock"></object></a>
+
+            <!-- Project 2 -->
+            <div>
+                <a href="cyber.html">
+                    <img 
+                        class="w-full h-auto" 
+                        src="home/cyber.svg" 
+                        alt="Cyber project"
+                    >
+                </a>
             </div>
-            <div class="flex flex-col justify-center gap-8">
-                <a href="" class=" bg-transparent hover:cursor-pointer hover:shadow-xl transform hover:scale-105 transition-all duration-200 ease-in-out"><object class="w-full h-full pointer-events-none"  data="home/worktogether.svg" alt="mock"></object></a>
+
+            <!-- Project 3 -->
+            <div>
+                <a href="real.html">
+                    <object 
+                        class="w-full h-auto pointer-events-none" 
+                        data="home/real.svg"
+                    ></object>
+                </a>
             </div>
+
         </main>
     </div>
-    <footer class=" py-12 flex flex-row justify-center gap-10 max-[440px]:flex-col max-[440px]:items-center border-t border-slate-200  ">
-        <div class="flex flex-row items-center gap-2">
-        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="mailto:anna.dehtiarova@gmail.com" target="_blank" >Email</a>
-        </div>
-        <div class="flex flex-row items-center gap-2">
-            <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="https://github.com/annadehtiarova"  target="_blank" >GitHub</a>
-        </div>
-        <div class="flex flex-row items-center gap-2">
-        <img src="fluent_arrow-right-12-regular.svg" alt="fluent_arrow-right">
-        <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" >LinkedIn</a>
+
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-slate-200">
+        <div class="max-w-[950px] mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8">
+
+            <div class="flex items-center gap-2">
+                <img src="fluent_arrow-right-12-regular.svg" alt="">
+                <a href="mailto:anna.dehtiarova@gmail.com" target="_blank">Email</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <img src="fluent_arrow-right-12-regular.svg" alt="">
+                <a href="https://github.com/annadehtiarova" target="_blank">GitHub</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <img src="fluent_arrow-right-12-regular.svg" alt="">
+                <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank">LinkedIn</a>
+            </div>
+
         </div>
     </footer>
 
-    <script src="index.js"></script>
-    
 </body>
 </html>
