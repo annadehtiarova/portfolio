@@ -31,25 +31,57 @@
 </head>
 <body class="font-['Figtree'] text-base">
     
-        <!-- NAVIGATION -->
-<nav class="py-12 border-b border-slate-200">
-  <div class="max-w-[950px] mx-auto px-6 flex justify-between items-center">
+ <!-- NAVIGATION -->
+    <nav class="py-12 border-b border-slate-200 relative z-50 bg-white">
+        <div class="max-w-[950px] mx-auto px-6 flex justify-between items-center">
 
-    <a href="index.html" class="font-bold">
-      ANNA DEHTIAROVA
-    </a>
+            <!-- Logo -->
+            <a href="index.html" class="font-bold">
+                ANNA DEHTIAROVA
+            </a>
 
-    <div class="flex items-center space-x-8">
-      <a href="/" class="hover:opacity-60 transition">
-        Apps
-      </a>
-      <a href="/illustrations.html" class="hover:opacity-60 transition">
-        Illustrations
-      </a>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/" class="hover:opacity-60 transition">Apps</a>
+                <a href="/illustrations.html" class="hover:opacity-60 transition">Illustrations</a>
+            </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Full-Width Slide-in Menu -->
+    <div id="mobile-menu"
+         class="fixed top-0 left-0 h-full w-full bg-white z-50 flex flex-col pt-24 px-6 md:hidden
+                transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <!-- Close Button -->
+        <button id="close-btn" class="absolute top-6 right-6 focus:outline-none text-black text-2xl">
+            <i class="fas fa-xmark"></i>
+        </button>
+
+        <!-- Menu Links -->
+        <a href="/" class="block text-left text-2xl py-4 hover:opacity-60 transition">Apps</a>
+        <a href="/illustrations.html" class="block text-left text-2xl py-4 hover:opacity-60 transition">Illustrations</a>
+
+        <hr class="my-6 border-slate-300">
+
+        <!-- Contact Links -->
+        <a href="mailto:anna.dehtiarova@gmail.com" class="flex items-center gap-2 text-left text-xl py-2 hover:opacity-60 transition">
+            <img src="fluent_arrow-right-12-regular.svg" alt="" class="w-4 h-4"> Email
+        </a>
+        <a href="https://github.com/annadehtiarova" target="_blank" class="flex items-center gap-2 text-left text-xl py-2 hover:opacity-60 transition">
+            <img src="fluent_arrow-right-12-regular.svg" alt="" class="w-4 h-4"> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" class="flex items-center gap-2 text-left text-xl py-2 hover:opacity-60 transition">
+            <img src="fluent_arrow-right-12-regular.svg" alt="" class="w-4 h-4"> LinkedIn
+        </a>
     </div>
-
-  </div>
-</nav>
 
     <!-- MAIN CONTENT WRAPPER -->
     <div class="font-['Figtree'] text-base w-[950px] mx-auto max-[786px]:w-[650px] max-[440px]:w-[340px]">
@@ -181,6 +213,23 @@
     </footer>
 
     <script src="index.js"></script>
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full'); // hide
+            mobileMenu.classList.toggle('translate-x-0');    // show
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');   // hide
+            mobileMenu.classList.remove('translate-x-0');    // show
+        });
+    </script>
+
     
 </body>
 </html>
