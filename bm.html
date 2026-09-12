@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>BuildingMinds — Space Utilization Dashboard · Anna Dehtiarova</title>
+
+<meta
+  name="description"
+  content="Case study: Redesign of the space utilization dashboard to help decarbonize real estate. By Anna Dehtiarova, UX & Digital Designer."
+/>
+
+<meta name="author" content="Anna Dehtiarova" />
+
+<link
+  rel="canonical"
+  href="https://www.annadehtiarova.com/bm"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Anna Dehtiarova" />
+<meta property="og:title" content="BuildingMinds — Space Utilization Dashboard · Anna Dehtiarova" />
+<meta property="og:description" content="Case study: Redesign of the space utilization dashboard to help decarbonize real estate." />
+<meta property="og:url" content="https://www.annadehtiarova.com/bm" />
+<meta property="og:image" content="https://www.annadehtiarova.com/home-assets/bm-home.webp" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BuildingMinds — Space Utilization Dashboard · Anna Dehtiarova" />
+<meta name="twitter:description" content="Case study: Redesign of the space utilization dashboard to help decarbonize real estate." />
+<meta name="twitter:image" content="https://www.annadehtiarova.com/home-assets/bm-home.webp" />
+
+<!-- Favicon -->
+<link
+  rel="icon"
+  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Georgia' fill='%23ffffff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"
+/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="bm.css" />
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-08WQB25W0H"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-08WQB25W0H');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "BuildingMinds — Space Utilization Dashboard",
+  "author": {
+    "@type": "Person",
+    "name": "Anna Dehtiarova"
+  },
+  "url": "https://www.annadehtiarova.com/bm"
+}
+</script>
+</head>
+
+
+<body class="bg-white text-neutral-900 antialiased">
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+
+<header class="border-b border-neutral-200">
+
+  <div class="page-container header-inner">
+
+    <a
+      href="index.html"
+      class="font-display font-semibold text-sm md:text-base tracking-label uppercase"
+    >
+      Anna Dehtiarova
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="desktop-nav">
+      <a href="index.html#products">
+        Products
+      </a>
+
+      <a href="index.html#websites">
+        Websites
+      </a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="menu-btn"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="mobile-menu-button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 7h16M4 12h16M4 17h16"
+        />
+      </svg>
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- ============================================================
+     MOBILE MENU
+============================================================ -->
+
+<!-- Mobile drawer overlay -->
+  <div id="mobile-menu-overlay" class="mobile-overlay"></div>
+
+  <!-- Mobile drawer -->
+  <nav id="mobile-menu" class="mobile-drawer sm:hidden" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <span class="font-display font-semibold text-sm tracking-label uppercase">Anna Dehtiarova</span>
+      <button id="menu-close-btn" aria-label="Close menu" class="-mr-2 p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="index.html#products" class="font-display">Products</a></li>
+      <li><a href="index.html#websites" class="font-display">Websites</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="mailto:anna.dehtiarova@gmail.com" data-email="anna.dehtiarova@gmail.com" class="js-copy-email text-xs tracking-label uppercase text-neutral-600">Email</a>
+      <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" rel="noopener noreferrer" class="text-xs tracking-label uppercase text-neutral-600">LinkedIn</a>
+    </div>
+  </nav>
+
+
+<main>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+
+<section class="page-container cs-hero-section">
+
+  <div class="cs-hero">
+
+    <div class="cs-hero-logo-col">
+
+      <img
+        src="bm-assets/bm-logo.svg"
+        alt="BuildingMinds"
+        class="cs-hero-logo"
+        width="196"
+        height="57"
+      />
+
+    </div>
+
+
+    <div class="cs-hero-text">
+
+      <p class="text-xs tracking-label uppercase text-neutral-500 mb-4">
+        Product design case study
+      </p>
+
+      <h1 class="font-display cs-h1 mb-6">
+        Redesign of the space utilization dashboard to help decarbonize real estate
+      </h1>
+
+      <div class="cs-rule"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     HEADER IMAGE / OVERVIEW / PROBLEM / SOLUTION
+============================================================ -->
+
+<section class="page-container cs-header-section">
+
+  <div class="cs-header-img-wrap">
+
+    <div class="cs-header-img-col">
+
+      <img
+        src="bm-assets/bm-header.svg"
+        alt="BuildingMinds brand illustration — space utilization dashboard artwork"
+        loading="eager"
+        width="700"
+        height="600"
+      />
+
+    </div>
+
+
+    <div class="cs-header-text-col cs-overview-list">
+
+      <div>
+
+        <div class="cs-numbered-section mb-4">
+          <span class="cs-num">01</span>
+          <span class="cs-section-label">Overview</span>
+        </div>
+
+        <p class="cs-body-text">
+          BuildingMinds is a real estate technology company that helps organizations manage their portfolios sustainably by turning building data into actionable insight. Their platform brings together space, sensor, and booking data to help facility managers understand how buildings are actually being used. I joined as Product Designer to redesign the space utilization dashboard, one of the platform's core modules.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="cs-numbered-section mb-4">
+          <span class="cs-num">02</span>
+          <span class="cs-section-label">Problem</span>
+        </div>
+
+        <p class="cs-body-text">
+          Facility and portfolio managers struggled to understand how efficiently their space was being used across floors and buildings. Utilization data was scattered across sensors, bookings, and manual surveys, making it hard to see where space was underused, where it was overcrowded, and where costs and emissions could be reduced. The existing dashboard presented raw numbers without the context needed to act on them.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="cs-numbered-section mb-4">
+          <span class="cs-num">03</span>
+          <span class="cs-section-label">Solution</span>
+        </div>
+
+        <p class="cs-body-text">
+          We designed a dashboard that lets users move fluidly between portfolio, building, and floor level views, surfacing utilization trends alongside the data behind them. Sensor occupancy, desk and room bookings, and check-in data were combined into a single view, helping teams identify underused space, right-size their footprint, and make more sustainable real-estate decisions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     QUOTE
+============================================================ -->
+
+<section class="cs-quote-section">
+
+  <div class="page-container cs-quote-inner">
+
+    <blockquote class="cs-quote">
+      “Understanding real user needs and pain points helped shape a dashboard that really works for them.”
+    </blockquote>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     META
+============================================================ -->
+
+<section class="page-container cs-meta-section">
+
+  <div class="cs-meta-grid">
+
+    <div class="cs-meta-left">
+
+      <div class="cs-numbered-section">
+        <span class="cs-num">04</span>
+        <span class="cs-section-label">Role</span>
+      </div>
+
+      <p class="cs-meta-value font-display font-semibold">
+        Product Designer<br />
+        Data Visualization
+      </p>
+
+      <div class="cs-rule-short"></div>
+
+
+      <div class="cs-numbered-section mt-8">
+        <span class="cs-num">05</span>
+        <span class="cs-section-label">Process</span>
+      </div>
+
+      <p class="cs-meta-value">
+        Research · Ideation · Design · Testing
+      </p>
+
+    </div>
+
+
+    <div class="cs-meta-right">
+
+      <div class="cs-numbered-section">
+        <span class="cs-num">06</span>
+        <span class="cs-section-label">Tools</span>
+      </div>
+
+      <p class="cs-meta-value">
+        Figma · Slack · Jira · Miro
+      </p>
+
+      <div class="cs-rule-short"></div>
+
+
+      <div class="cs-numbered-section mt-8">
+        <span class="cs-num">07</span>
+        <span class="cs-section-label">
+          Research &amp; Analysis
+        </span>
+      </div>
+
+      <ul class="cs-research-list">
+        <li>User interviews</li>
+        <li>Empathy mapping</li>
+        <li>Affinity mapping</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     USER INTERVIEWS
+============================================================ -->
+
+<section class="page-container cs-long-section">
+
+  <div class="cs-long-grid">
+
+    <div class="cs-long-label">
+
+      <div class="cs-numbered-section">
+        <span class="cs-num">08</span>
+        <span class="cs-section-label">
+          User Interviews
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="cs-long-content">
+
+      <div class="cs-long-body">
+
+        <p class="cs-body-text">
+          I interviewed facility managers, portfolio managers, and workplace analysts who used the existing dashboard day to day. These conversations surfaced how they made decisions about space, which numbers they trusted, and where the current tool left them guessing. The interviews shaped the core question the redesign needed to answer: not just how much space is used, but why, and what to do about it.
+        </p>
+
+      </div>
+
+
+      <div class="cs-interview-grid">
+
+        <img
+          src="bm-assets/user-1.webp"
+          alt="Empathy map diagram showing what users say, think, feel and do"
+          loading="lazy"
+        />
+
+        <img
+          src="bm-assets/user-2.webp"
+          alt="Empathy map diagram showing what users say, think, feel and do"
+          loading="lazy"
+        />
+
+        <img
+          src="bm-assets/user-3.webp"
+          alt="Empathy map diagram showing what users say, think, feel and do"
+          loading="lazy"
+        />
+
+        <img
+          src="bm-assets/user-4.webp"
+          alt="Empathy map diagram showing what users say, think, feel and do"
+          loading="lazy"
+        />
+
+        <img
+          src="bm-assets/user-5.webp"
+          alt="Empathy map diagram showing what users say, think, feel and do"
+          loading="lazy"
+        />
+
+        <img
+          src="bm-assets/user-6.webp"
+          alt="Empathy map diagram showing what users say, think, feel and do"
+          loading="lazy"
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     AFFINITY MAPPING
+============================================================ -->
+
+<section class="cs-diagram-section">
+
+  <div class="page-container cs-affinity-grid">
+
+    <div class="cs-affinity-text">
+
+      <div class="cs-numbered-section mb-4">
+
+        <span class="cs-num">09</span>
+
+        <span class="cs-section-label">
+          Affinity Mapping
+        </span>
+
+      </div>
+
+
+      <p class="cs-body-text">
+        I grouped interview notes and observations into themes using affinity mapping, which helped the team spot recurring patterns across roles — from a need for cross-building comparisons to confusion around how utilization was actually calculated.
+      </p>
+
+    </div>
+
+
+    <div class="cs-diagram-img-wrap">
+
+      <img
+        src="bm-assets/bm-affinitymap.svg"
+        alt="Affinity map diagram grouping user research notes into themes"
+        loading="lazy"
+      />
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     EMPATHY MAPPING
+============================================================ -->
+
+<section class="page-container cs-long-section">
+
+  <div class="cs-empathy-grid">
+
+    <div class="cs-diagram-img-wrap cs-diagram-narrow">
+
+      <img
+        src="bm-assets/bm-empathymap.svg"
+        alt="Empathy map diagram showing what users say, think, feel and do"
+        loading="lazy"
+      />
+
+    </div>
+
+
+    <div class="cs-empathy-text">
+
+      <div class="cs-numbered-section">
+
+        <span class="cs-num">10</span>
+
+        <span class="cs-section-label">
+          Empathy Mapping
+        </span>
+
+      </div>
+
+
+      <div class="cs-long-body">
+
+        <p class="cs-body-text">
+          I mapped what users said, thought, felt, and did when working with utilization data, to better understand their motivations and frustrations beyond their literal feature requests. This helped the team see that the real need wasn't more data, but more confidence in the data they already had.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     PERSONAS / DATA SOURCES
+============================================================ -->
+
+<section class="page-container cs-personas-data-section">
+
+  <div class="cs-personas-data-grid">
+
+    <div class="cs-personas-column">
+
+      <div class="cs-numbered-section">
+
+        <span class="cs-num">11</span>
+
+        <span class="cs-section-label">
+          Personas
+        </span>
+
+      </div>
+
+
+      <p class="cs-body-text cs-personas-intro">
+        Based on the interviews and mapping exercises, I distilled five recurring user types who would rely on the redesigned dashboard.
+      </p>
+
+    </div>
+
+
+    <div class="cs-data-column">
+
+      <div class="cs-numbered-section">
+
+        <span class="cs-num">12</span>
+
+        <span class="cs-section-label">
+          Combining Data Sources
+        </span>
+
+      </div>
+
+
+      <p class="cs-body-text cs-features-intro">
+        The redesigned dashboard combines three sources of occupancy data into one consistent view, so users no longer have to reconcile numbers from separate systems.
+      </p>
+
+
+      <div class="cs-features-grid">
+
+        <div class="cs-feature-card">
+          <img
+            src="bm-assets/bm-sensor.svg"
+            alt="Sensor data icon"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="cs-feature-card">
+          <img
+            src="bm-assets/bm-booking.svg"
+            alt="Booking data icon"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="cs-feature-card">
+          <img
+            src="bm-assets/bm-checkin.svg"
+            alt="Check-in data icon"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     IDEATION / USER STORIES
+============================================================ -->
+
+<section class="page-container cs-long-section">
+
+  <div class="cs-numbered-section mb-10">
+
+    <span class="cs-num">14</span>
+
+    <span class="cs-section-label">
+      Ideation &amp; Design
+    </span>
+
+  </div>
+
+
+  <div class="mb-8">
+
+    <h2 class="font-display font-semibold cs-h2 mb-4">
+      User stories
+    </h2>
+
+    <p class="cs-body-text cs-wide-text">
+      I created user stories that capture the needs and goals of each persona, helping to ensure that the Space Utilization Dashboard meets their specific requirements and enhances their workflow.
+    </p>
+
+  </div>
+
+
+  <div class="cs-two-col-grid">
+
+    <!-- Facility Manager -->
+
+    <div>
+
+      <div class="cs-story-heading">
+        <p class="text-xs tracking-label uppercase text-neutral-500">
+          As a facility manager, I want to…
+        </p>
+      </div>
+
+
+      <ol class="cs-user-stories">
+
+        <li>
+          <span class="cs-story-num">01</span>
+          <span>
+            access real-time data on space utilization, so that I can quickly address issues such as overcrowding and maintenance needs.
+          </span>
+        </li>
+
+        <li>
+          <span class="cs-story-num">02</span>
+          <span>
+            ensure that the space utilization data is accurate and up-to-date, so that I can plan maintenance and operations effectively without errors.
+          </span>
+        </li>
+
+        <li>
+          <span class="cs-story-num">03</span>
+          <span>
+            drill down from a high-level overview to floor-level data, so that I can identify and resolve specific space utilization issues in individual areas.
+          </span>
+        </li>
+
+        <li>
+          <span class="cs-story-num">04</span>
+          <span>
+            see employee satisfaction survey data alongside space utilization metrics, so that I can understand how the workspace affects employee satisfaction and make improvements accordingly.
+          </span>
+        </li>
+
+      </ol>
+
+    </div>
+
+
+    <!-- Property Manager -->
+
+    <div>
+
+      <div class="cs-story-heading">
+
+        <p class="text-xs tracking-label uppercase text-neutral-500">
+          As a property manager, I want to…
+        </p>
+
+      </div>
+
+
+      <ol class="cs-user-stories">
+
+        <li>
+          <span class="cs-story-num">01</span>
+          <span>
+            communicate insights to different stakeholders, so that I can provide relevant insights and address specific needs of tenants, investors, and upper management.
+          </span>
+        </li>
+
+        <li>
+          <span class="cs-story-num">02</span>
+          <span>
+            analyze trends in space utilization over time, so that I can make informed decisions about leasing and space allocation.
+          </span>
+        </li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     LEVELS
+============================================================ -->
+
+<section class="cs-levels-section">
+
+  <div class="page-container">
+
+    <div class="cs-numbered-section">
+
+      <span class="cs-num">12</span>
+
+      <span class="cs-section-label">
+        Portfolio, Building &amp; Floor Levels
+      </span>
+
+    </div>
+
+
+    <p class="cs-body-text cs-levels-intro">
+      The dashboard was designed around three levels of detail, letting users zoom from a high-level portfolio overview down to the specifics of a single floor without losing context.
+    </p>
+
+
+    <div class="cs-levels-grid">
+
+      <div class="cs-level-card">
+
+        <img
+          src="bm-assets/bm-building-level.svg"
+          alt="Portfolio level view icon"
+          loading="lazy"
+        />
+
+        <p class="cs-level-title">
+          Portfolio level
+        </p>
+
+        <p class="cs-level-desc">
+          Compare utilization across an entire real-estate portfolio to spot underperforming buildings.
+        </p>
+
+      </div>
+
+
+      <div class="cs-level-card">
+
+        <img
+          src="bm-assets/bm-portfolio-level.svg"
+          alt="Building level view icon"
+          loading="lazy"
+        />
+
+        <p class="cs-level-title">
+          Building level
+        </p>
+
+        <p class="cs-level-desc">
+          Drill into a single building to see how utilization varies across floors and space types.
+        </p>
+
+      </div>
+
+
+      <div class="cs-level-card">
+
+        <img
+          src="bm-assets/bm-floor-level.svg"
+          alt="Floor level view icon"
+          loading="lazy"
+        />
+
+        <p class="cs-level-title">
+          Floor level
+        </p>
+
+        <p class="cs-level-desc">
+          Inspect individual desks and rooms on a floor plan to understand day-to-day usage.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     USER FLOWS / WIREFRAMES
+============================================================ -->
+
+<section class="page-container cs-long-section">
+
+  <div class="cs-flows-grid">
+
+    <div class="cs-flow-column">
+
+      <div class="cs-numbered-section">
+
+        <span class="cs-num">15</span>
+
+        <span class="cs-section-label">
+          User Flows
+        </span>
+
+      </div>
+
+
+      <p class="cs-body-text">
+        I mapped out each step of user's journey from Asset management page in to Space utilization page through each dashboard. User flows helped me determine the layout of each dashboard, ensuring users could complete their tasks without friction.
+      </p>
+
+    </div>
+
+
+    <div class="cs-flow-column">
+
+      <div class="cs-numbered-section">
+
+        <span class="cs-num">16</span>
+
+        <span class="cs-section-label">
+          Wireframes
+        </span>
+
+      </div>
+
+
+      <p class="cs-body-text">
+        I created low-fidelity prototypes using basic sketching tools and Figma to quickly visualize and iterate on core concepts and user flows before refining them into high-fidelity designs.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     FLOWCHART
+============================================================ -->
+
+<section class="cs-flowchart-section">
+
+  <div class="page-container">
+
+    <div class="cs-numbered-section">
+
+      <span class="cs-num">17</span>
+
+      <span class="cs-section-label">
+        Flowchart &amp; Logic
+      </span>
+
+    </div>
+
+
+    <p class="cs-body-text cs-flowchart-intro">
+      I mapped out the system logic and decision branches to clearly define how users transition between states and actions within the application.
+    </p>
+
+
+    <div class="cs-flowchart-image">
+
+      <img
+        src="bm-assets/bm-flowchart.svg"
+        alt="Flowchart diagram showing user decision points and system flow"
+        loading="lazy"
+      />
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     PROTOTYPES
+============================================================ -->
+
+<section class="page-container cs-protostack-section">
+
+  <div class="cs-numbered-section mb-10">
+
+    <span class="cs-num">15</span>
+
+    <span class="cs-section-label">
+      Prototypes
+    </span>
+
+  </div>
+
+
+  <div class="cs-protostack-item">
+
+    <div class="cs-protostack-copy">
+
+      
+
+      <h2 class="font-display font-semibold cs-h2 mb-4">
+        Portfolio overview
+      </h2>
+
+      <p class="cs-body-text">
+        The portfolio view gives a bird's-eye comparison of utilization across all buildings, helping managers quickly identify which locations need attention.
+      </p>
+
+    </div>
+
+
+    <div class="cs-protostack-img">
+
+      <img
+        src="bm-assets/bm-portfolio.svg"
+        alt="Prototype screen — portfolio level utilization overview"
+        loading="lazy"
+      />
+
+    </div>
+
+  </div>
+
+
+  <div class="cs-protostack-item">
+
+    <div class="cs-protostack-copy">
+
+     
+
+      <h2 class="font-display font-semibold cs-h2 mb-4">
+        Building detail
+      </h2>
+
+      <p class="cs-body-text">
+        Drilling into a building surfaces floor-by-floor utilization trends, combining sensor, booking, and check-in data in one chart.
+      </p>
+
+    </div>
+
+
+    <div class="cs-protostack-img">
+
+      <img
+        src="bm-assets/bm-building.svg"
+        alt="Prototype screen — building level utilization detail"
+        loading="lazy"
+      />
+
+    </div>
+
+  </div>
+
+
+  <div class="cs-protostack-item">
+
+    <div class="cs-protostack-copy">
+
+     
+
+      <h2 class="font-display font-semibold cs-h2 mb-4">
+        Floor detail
+      </h2>
+
+      <p class="cs-body-text">
+        At the floor level, an interactive plan shows individual desks and rooms, letting users see exactly where space goes unused.
+      </p>
+
+    </div>
+
+
+    <div class="cs-protostack-img">
+
+      <img
+        src="bm-assets/bm-floor.svg"
+        alt="Prototype screen — floor level utilization detail"
+        loading="lazy"
+      />
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     REFLECTION
+============================================================ -->
+
+<section class="cs-reflection-section">
+
+  <div class="page-container cs-reflection-inner">
+
+    <div class="cs-numbered-section mb-8">
+
+      <span class="cs-num cs-num-light">
+        16
+      </span>
+
+      <span class="cs-section-label cs-label-light">
+        Reflection
+      </span>
+
+    </div>
+
+
+    <p class="cs-reflection-text">
+      Redesigning the space utilization dashboard reinforced how much good data visualization depends on understanding the decisions people are actually trying to make. By grounding the design in interviews, empathy maps, and affinity mapping, we moved past raw numbers toward a tool that helps facility and portfolio managers act with confidence. It deepened my appreciation for combining qualitative research with data-heavy interfaces, and for designing at multiple levels of scale without losing the user's sense of place.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     NEXT PROJECT
+============================================================ -->
+
+<section class="page-container cs-next-section">
+
+  <p class="text-xs tracking-label uppercase text-neutral-500 mb-4">
+    Next · Other projects
+  </p>
+
+  <a
+    href="tenzir.html"
+    class="cs-next-link font-display font-semibold"
+  >
+    Design of a security data pipeline platform to simplify workflows and enhance security operations
+  </a>
+
+</section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="border-t border-neutral-200">
+
+  <div class="page-container py-8 md:py-10">
+
+    <div class="footer-inner">
+
+      <p class="text-xs tracking-label uppercase text-neutral-900">
+        Anna Dehtiarova
+      </p>
+
+
+      <div class="footer-links">
+
+        <a
+          href="mailto:anna.dehtiarova@gmail.com"
+          data-email="anna.dehtiarova@gmail.com"
+          class="js-copy-email"
+        >
+          Email
+        </a>
+
+        <span>·</span>
+
+        <a
+          href="https://www.linkedin.com/in/annadehtiarova/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+
+    // Mobile drawer
+    const menuBtn = document.getElementById('menu-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+
+    function openMenu() {
+      mobileMenu.classList.add('is-open');
+      overlay.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    menuCloseBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
+    // Copy email
+    document.querySelectorAll('.js-copy-email').forEach(link => {
+      const originalText = link.textContent;
+      const email = link.getAttribute('data-email');
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const showCopied = () => { link.textContent = 'Copied!'; setTimeout(() => { link.textContent = originalText; }, 1600); };
+        const legacyCopy = () => {
+          try {
+            const t = document.createElement('textarea');
+            t.value = email; t.style.position = 'fixed'; t.style.top = '0'; t.style.left = '0'; t.style.opacity = '0';
+            document.body.appendChild(t); t.focus(); t.select();
+            document.execCommand('copy') ? showCopied() : (window.location.href = `mailto:${email}`);
+            document.body.removeChild(t);
+          } catch { window.location.href = `mailto:${email}`; }
+        };
+        window.isSecureContext && navigator.clipboard?.writeText ? navigator.clipboard.writeText(email).then(showCopied).catch(legacyCopy) : legacyCopy();
+      });
+    });
+
+
+
+/* ============================================================
+   COPY EMAIL
+============================================================ */
+
+document.querySelectorAll('.js-copy-email').forEach(function(link) {
+
+  const originalText = link.textContent;
+  const email = link.getAttribute('data-email');
+
+
+  link.addEventListener('click', function(e) {
+
+    e.preventDefault();
+
+
+    const showCopied = function() {
+
+      link.textContent = 'Copied!';
+
+      setTimeout(function() {
+        link.textContent = originalText;
+      }, 1600);
+
+    };
+
+
+    const legacyCopy = function() {
+
+      try {
+
+        const textarea = document.createElement('textarea');
+
+        textarea.value = email;
+
+        textarea.style.position = 'fixed';
+        textarea.style.top = '0';
+        textarea.style.left = '0';
+        textarea.style.opacity = '0';
+
+        document.body.appendChild(textarea);
+
+        textarea.focus();
+        textarea.select();
+
+        document.execCommand('copy')
+          ? showCopied()
+          : (window.location.href = `mailto:${email}`);
+
+        document.body.removeChild(textarea);
+
+      } catch {
+
+        window.location.href = `mailto:${email}`;
+
+      }
+
+    };
+
+
+    if (
+      window.isSecureContext &&
+      navigator.clipboard?.writeText
+    ) {
+
+      navigator.clipboard
+        .writeText(email)
+        .then(showCopied)
+        .catch(legacyCopy);
+
+    } else {
+
+      legacyCopy();
+
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>

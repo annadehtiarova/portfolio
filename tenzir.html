@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tenzir — Security Data Pipeline Platform · Anna Dehtiarova</title>
+<meta name="description" content="Case study: Design of a security data pipeline platform to simplify workflows and enhance security operations. By Anna Dehtiarova, UX & Digital Designer." />
+<meta name="author" content="Anna Dehtiarova" />
+<link rel="canonical" href="https://www.annadehtiarova.com/tenzir" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Anna Dehtiarova" />
+<meta property="og:title" content="Tenzir — Security Data Pipeline Platform · Anna Dehtiarova" />
+<meta property="og:description" content="Case study: Design of a security data pipeline platform to simplify workflows and enhance security operations." />
+<meta property="og:url" content="https://www.annadehtiarova.com/tenzir" />
+<meta property="og:image" content="https://www.annadehtiarova.com/tenzir-assets/tenzir-header.webp" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tenzir — Security Data Pipeline Platform · Anna Dehtiarova" />
+<meta name="twitter:description" content="Case study: Design of a security data pipeline platform to simplify workflows and enhance security operations." />
+<meta name="twitter:image" content="https://www.annadehtiarova.com/tenzir-assets/tenzir-header.webp" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Georgia' fill='%23ffffff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Compiled stylesheets -->
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="tenzir.css" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-08WQB25W0H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-08WQB25W0H');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Tenzir — Security Data Pipeline Platform",
+  "author": { "@type": "Person", "name": "Anna Dehtiarova" },
+  "url": "https://www.annadehtiarova.com/tenzir"
+}
+</script>
+</head>
+
+<body class="bg-white text-neutral-900 antialiased">
+
+  <!-- ── HEADER ── -->
+  <header class="border-b border-neutral-200">
+    <div class="page-container h-20 md:h-24 flex items-center justify-between">
+      <a href="index.html" class="font-display font-semibold text-sm md:text-base tracking-label uppercase">Anna Dehtiarova</a>
+      <nav class="hidden sm:flex items-center gap-8 text-xs md:text-sm tracking-label uppercase">
+        <a href="index.html#products" class="underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 transition-colors">Products</a>
+        <a href="index.html#websites" class="underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 transition-colors">Websites</a>
+      </nav>
+      <button id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="sm:hidden -mr-2 p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile drawer overlay -->
+  <div id="mobile-menu-overlay" class="mobile-overlay"></div>
+
+  <!-- Mobile drawer -->
+  <nav id="mobile-menu" class="mobile-drawer sm:hidden" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <span class="font-display font-semibold text-sm tracking-label uppercase">Anna Dehtiarova</span>
+      <button id="menu-close-btn" aria-label="Close menu" class="-mr-2 p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="index.html#products" class="font-display">Products</a></li>
+      <li><a href="index.html#websites" class="font-display">Websites</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="mailto:anna.dehtiarova@gmail.com" data-email="anna.dehtiarova@gmail.com" class="js-copy-email text-xs tracking-label uppercase text-neutral-600">Email</a>
+      <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" rel="noopener noreferrer" class="text-xs tracking-label uppercase text-neutral-600">LinkedIn</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── 1. HERO ── -->
+    <section class="page-container cs-hero-section">
+      <div class="cs-hero">
+        <div class="cs-hero-logo-col">
+          <img src="tenzir-assets/tenzir-logo.svg" alt="Tenzir" class="cs-hero-logo" width="176" height="37" />
+        </div>
+        <div class="cs-hero-text">
+          <p class="text-xs tracking-label uppercase text-neutral-500 mb-4">Product design case study</p>
+          <h1 class="font-display cs-h1 mb-6">Design of a security data pipeline platform to simplify workflows and enhance security operations</h1>
+          <div class="cs-rule"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. HEADER IMAGE + OVERVIEW / PROBLEM / SOLUTION ── -->
+    <section class="page-container cs-header-section">
+      <div class="cs-header-img-wrap">
+        <div class="cs-header-img-col">
+          <img src="tenzir-assets/tenzir-header.webp" alt="Tenzir brand illustration — colourful pipeline data art on dark background" loading="eager" width="3200" height="2350" />
+        </div>
+        <div class="cs-header-text-col cs-overview-list">
+          <div class="flex flex-col gap-2">
+            <div class="cs-numbered-section">
+              <span class="cs-num">01</span>
+              <span class="cs-section-label">Overview</span>
+            </div>
+            <p class="cs-body-text">Tenzir is a company that specializes in providing data management solutions for security teams. Their goal is to help organizations efficiently process, analyze, and store large volumes of security data. Key features and functionalities of Tenzir include: data ingestion, data processing, scalability, analytics, storage optimization and integration. I was hired as the first and only Product Designer on the team and tasked to design the MVP.</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="cs-numbered-section">
+              <span class="cs-num">02</span>
+              <span class="cs-section-label">Problem</span>
+            </div>
+            <p class="cs-body-text">Security teams face significant challenges in managing large volumes of complex data from multiple, disconnected sources. This leads to inefficiencies in data integration, slow processing speeds, and high storage costs, while limiting their ability to analyze and detect threats quickly. Traditional systems often fail to provide the real-time insights and scalability needed, making it difficult for teams to respond to security incidents in a timely manner.</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="cs-numbered-section">
+              <span class="cs-num">03</span>
+              <span class="cs-section-label">Solution</span>
+            </div>
+            <p class="cs-body-text">We designed a platform that simplified data ingestion from multiple sources using Tenzir Query Language (TQL), making it more accessible through prompt-based assistance and easy-to-navigate documentation for quick reference. Users could run and deploy pipelines, and monitor their state in real time, gaining instant visibility into data flow and performance. Additionally, we introduced data visualization capabilities, enabling users to analyze security data more effectively through interactive charts and graphs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. PULL QUOTE ── -->
+    <section class="cs-quote-section">
+      <div class="page-container cs-quote-inner">
+        <blockquote class="cs-quote">"Our goal was to get a basic version of the product to market quickly to start gathering real-world feedback."</blockquote>
+      </div>
+    </section>
+
+    <!-- ── 4. ROLE / PROCESS / TOOLS / RESEARCH ── -->
+    <section class="page-container cs-meta-section">
+      <div class="cs-meta-grid">
+        <div class="cs-meta-left">
+          <div class="cs-numbered-section">
+            <span class="cs-num">04</span>
+            <span class="cs-section-label">Role</span>
+          </div>
+          <p class="cs-meta-value font-display font-semibold">Principal Product Designer<br>Data Visualization</p>
+          <div class="cs-rule-short"></div>
+
+          <div class="cs-numbered-section mt-8">
+            <span class="cs-num">05</span>
+            <span class="cs-section-label">Process</span>
+          </div>
+          <p class="cs-meta-value">Research · Ideation · Design · Testing</p>
+        </div>
+        <div class="cs-meta-right">
+          <div class="cs-numbered-section">
+            <span class="cs-num">06</span>
+            <span class="cs-section-label">Tools</span>
+          </div>
+          <p class="cs-meta-value">Figma · Slack · Github · Excalidraw</p>
+          <div class="cs-rule-short"></div>
+          <div class="cs-numbered-section mt-8">
+            <span class="cs-num">07</span>
+            <span class="cs-section-label">Research &amp; Analysis</span>
+          </div>
+          <ul class="cs-research-list">
+            <li>Stakeholder interviews</li>
+            <li>Competitive benchmarking</li>
+            <li>Personas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  
+
+    <!-- ── 5. STAKEHOLDER INTERVIEWS ── -->
+    <section class="page-container cs-long-section">
+      <div class="cs-long-grid">
+        <div class="cs-long-label">
+          <div class="cs-numbered-section">
+            <span class="cs-num">08</span>
+            <span class="cs-section-label">Stakeholder Interviews</span>
+          </div>
+        </div>
+        <div class="cs-long-body">
+          <p class="cs-body-text">I conducted interviews with internal stakeholders, including the founder, engineering manager, and engineers, to tap into their existing knowledge about user needs, workflows, and design preferences. From these discussions, I developed a clear understanding of the key UI features, design goals, and performance requirements. Our goal was to get a basic version of the product to market quickly to start gathering real-world feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── COMPETITIVE BENCHMARKING ── -->
+    <section class="page-container cs-long-section">
+      <div class="cs-long-grid">
+        <div class="cs-long-label">
+          <div class="cs-numbered-section">
+            <span class="cs-num">09</span>
+            <span class="cs-section-label">Competitive Benchmarking</span>
+          </div>
+        </div>
+        <div class="cs-long-body">
+          <p class="cs-body-text">I looked at various interfaces of leading competitors in the cybersecurity data management space to see what they offer, how users experience them and where they could be better. Even though the competition provides powerful and fast search and filtering capabilities, clean and modern UI, and extensive library of visualization options, I have noticed that in most cases the interface appears overwhelming due to its complexity and the large number of features available, making it difficult for new users to navigate. The UI can also be slow, particularly when handling large datasets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. PERSONAS ── -->
+    <section class="cs-personas-section">
+      <div class="page-container">
+        <div class="cs-numbered-section">
+          <span class="cs-num">10</span>
+          <span class="cs-section-label">Personas</span>
+        </div>
+        <p class="cs-body-text cs-personas-intro">Based on the combination of existing knowledge from internal stakeholders, assumptions based on similar products, and industry insights, I created hypothetical user personas.</p>
+
+        <div class="cs-personas-grid">
+
+          <div class="cs-persona-card">
+            <div class="cs-persona-header">
+              <div class="cs-persona-avatar cs-avatar-blue">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="18" r="9" fill="#93B8D8"/><ellipse cx="24" cy="38" rx="15" ry="9" fill="#93B8D8"/></svg>
+              </div>
+              <div>
+                <p class="cs-persona-name">Sam, 38</p>
+                <p class="cs-persona-role tracking-label">Security Analyst</p>
+              </div>
+            </div>
+            <p class="cs-persona-bio">Works at a mid-sized enterprise, responsible for monitoring security systems, identifying threats, and responding to incidents.</p>
+            <div class="cs-persona-divider"></div>
+            <p class="cs-persona-section-label">Goals</p>
+            <ul class="cs-persona-list">
+              <li>To quickly detect and mitigate security threats</li>
+              <li>To streamline incident response processes</li>
+              <li>To stay updated with the latest cybersecurity trends</li>
+            </ul>
+            <p class="cs-persona-section-label">Pain Points</p>
+            <ul class="cs-persona-list">
+              <li>Overwhelming volume of alerts</li>
+              <li>Time-consuming data analysis</li>
+              <li>Difficulty in correlating data from multiple sources</li>
+            </ul>
+            <p class="cs-persona-section-label">Behaviors</p>
+            <ul class="cs-persona-list">
+              <li>Regularly uses data visualization and analysis tools</li>
+              <li>Collaborates with IT and incident response teams</li>
+              <li>Frequently checks threat intelligence feeds</li>
+            </ul>
+          </div>
+
+          <div class="cs-persona-card">
+            <div class="cs-persona-header">
+              <div class="cs-persona-avatar cs-avatar-teal">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="18" r="9" fill="#5AADA0"/><ellipse cx="24" cy="38" rx="15" ry="9" fill="#5AADA0"/></svg>
+              </div>
+              <div>
+                <p class="cs-persona-name">Emily, 35</p>
+                <p class="cs-persona-role tracking-label">Data Scientist</p>
+              </div>
+            </div>
+            <p class="cs-persona-bio">Analyzes large datasets to extract actionable insights and improve security measures.</p>
+            <div class="cs-persona-divider"></div>
+            <p class="cs-persona-section-label">Goals</p>
+            <ul class="cs-persona-list">
+              <li>To leverage data for predicting and preventing security incidents</li>
+              <li>To develop machine learning models for threat detection</li>
+              <li>To improve the accuracy and efficiency of data analysis</li>
+            </ul>
+            <p class="cs-persona-section-label">Pain Points</p>
+            <ul class="cs-persona-list">
+              <li>Difficulty in accessing and processing large volumes of data</li>
+              <li>Lack of integration between different data sources</li>
+              <li>Time-consuming data cleaning and preparation</li>
+            </ul>
+            <p class="cs-persona-section-label">Behaviors</p>
+            <ul class="cs-persona-list">
+              <li>Uses advanced analytics and machine learning tools</li>
+              <li>Collaborates with security analysts and IT teams</li>
+              <li>Regularly updates skills with new data science techniques</li>
+            </ul>
+          </div>
+
+          <div class="cs-persona-card">
+            <div class="cs-persona-header">
+              <div class="cs-persona-avatar cs-avatar-orange">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="18" r="9" fill="#D4845A"/><ellipse cx="24" cy="38" rx="15" ry="9" fill="#D4845A"/></svg>
+              </div>
+              <div>
+                <p class="cs-persona-name">Mike, 47</p>
+                <p class="cs-persona-role tracking-label">Executive</p>
+              </div>
+            </div>
+            <p class="cs-persona-bio">Oversees the overall security strategy and ensures alignment with business objectives.</p>
+            <div class="cs-persona-divider"></div>
+            <p class="cs-persona-section-label">Goals</p>
+            <ul class="cs-persona-list">
+              <li>To ensure the organization is protected from cyber threats</li>
+              <li>To achieve a strong return on security investments</li>
+              <li>To maintain a positive reputation and comply with regulations</li>
+            </ul>
+            <p class="cs-persona-section-label">Pain Points</p>
+            <ul class="cs-persona-list">
+              <li>Balancing security investments with budget constraints</li>
+              <li>Limited visibility into technical details of security operations</li>
+              <li>Ensuring timely and effective incident response</li>
+            </ul>
+            <p class="cs-persona-section-label">Behaviors</p>
+            <ul class="cs-persona-list">
+              <li>Reviews high-level security metrics and reports</li>
+              <li>Makes strategic decisions based on risk assessments</li>
+              <li>Engages with stakeholders to communicate security posture</li>
+            </ul>
+          </div>
+
+          <div class="cs-persona-card">
+            <div class="cs-persona-header">
+              <div class="cs-persona-avatar cs-avatar-purple">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="18" r="9" fill="#7B7BB8"/><ellipse cx="24" cy="38" rx="15" ry="9" fill="#7B7BB8"/></svg>
+              </div>
+              <div>
+                <p class="cs-persona-name">Chris, 35</p>
+                <p class="cs-persona-role tracking-label">Data Engineer</p>
+              </div>
+            </div>
+            <p class="cs-persona-bio">Builds and maintains the infrastructure required for optimal extraction, transformation, and loading (ETL) of data from various sources.</p>
+            <div class="cs-persona-divider"></div>
+            <p class="cs-persona-section-label">Goals</p>
+            <ul class="cs-persona-list">
+              <li>To ensure efficient data pipelines and data integrity</li>
+              <li>To integrate multiple data sources seamlessly</li>
+              <li>To provide clean, usable data for analysis and reporting</li>
+            </ul>
+            <p class="cs-persona-section-label">Pain Points</p>
+            <ul class="cs-persona-list">
+              <li>Managing the complexity of data pipelines</li>
+              <li>Ensuring data quality and consistency</li>
+              <li>Handling large volumes of data and real-time processing requirements</li>
+            </ul>
+            <p class="cs-persona-section-label">Behaviors</p>
+            <ul class="cs-persona-list">
+              <li>Works closely with data scientists and analysts to understand data needs</li>
+              <li>Regularly optimizes and troubleshoots data pipelines</li>
+              <li>Uses a variety of data engineering tools and platforms</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. IDEATION & DESIGN: USER STORIES / USER FLOWS ── -->
+    <section class="page-container cs-long-section">
+      <div class="cs-numbered-section mb-10">
+        <span class="cs-num">11</span>
+        <span class="cs-section-label">Ideation &amp; Design</span>
+      </div>
+
+      <div class="cs-two-col-grid">
+        <div>
+          <h2 class="font-display font-semibold cs-h2 mb-4">User stories</h2>
+          <p class="cs-body-text mb-6">I focused on several user stories that captured the core functionality needed for the MVP.</p>
+          <div class="border-b border-neutral-200"><p class="text-xs tracking-label uppercase text-neutral-500 py-6 mb-6 ">As a data engineer I want to…</p></div>
+          <ol class="cs-user-stories">
+            <li><span class="cs-story-num">01</span><span>add a node to the system so that I can integrate additional data sources or processing capabilities.</span></li>
+            <li><span class="cs-story-num">02</span><span>create a data pipeline so that I can define the flow and transformation of data from source to destination.</span></li>
+            <li><span class="cs-story-num">03</span><span>analyze data through interactive visualizations so that I can identify patterns and detect anomalies.</span></li>
+            <li><span class="cs-story-num">04</span><span>deploy a data pipeline so that it starts processing data as defined in its configuration.</span></li>
+            <li><span class="cs-story-num">05</span><span>view a list of all created pipelines and their statuses so that I can monitor and manage their performance.</span></li>
+          </ol>
+        </div>
+
+        <div>
+          <h2 class="font-display font-semibold cs-h2 mb-4">User flows</h2>
+          <p class="cs-body-text mb-6">I created user flow diagrams for the key user stories by mapping out each step and interaction, ensuring a seamless and intuitive user experience while addressing essential user needs and functionalities.</p>
+          <img src="tenzir-assets/tenzir-userflow.svg" alt="User flow diagram showing Sign Up and Sign In paths with a User Valid decision node" class="w-full block rounded" style="max-height:420px; object-fit:cover;" loading="lazy" width="2500" height="2000" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8. BRAINSTORMING ── -->
+    <section class="page-container cs-long-section">
+      <div class="cs-two-col-grid cs-brainstorm-grid">
+        <div>
+          <img src="tenzir-assets/tenzir-brainstorm.jpg" alt="Brainstorming illustration — tangled lightbulb cables representing ideas" loading="lazy" width="1968" height="2784" />
+        </div>
+        <div class="cs-brainstorm-text">
+          <h2 class="font-display font-semibold cs-h2 mb-4">Brainstorming</h2>
+          <p class="cs-body-text">We then gathered with the product team for a quick brainstorming and sketching out ideas on a whiteboard.</p>
+        </div>
+      
+        
+      </div>
+    </section>
+
+    <!-- ── 10. DESIGN SYSTEM ── -->
+    <section class="cs-ds-section">
+      <div class="page-container">
+        <div class="cs-ds-grid">
+          <div class="cs-ds-text">
+            <div class="cs-numbered-section mb-6">
+              <span class="cs-num">14</span>
+              <span class="cs-section-label">Design System</span>
+            </div>
+            <p class="cs-body-text">I designed the first design system for Tenzir, establishing guidelines and components to ensure consistency and efficiency across all digital products. This system streamlines the design process, enhances collaboration, and maintains a unified brand identity.</p>
+          </div>
+          <div class="cs-ds-swatches">
+            <div class="cs-ds-swatch-grid">
+              <div class="cs-swatch-card"><img src="tenzir-assets/ds-1.webp" alt="Design system component: Delete confirmation dialog" loading="lazy" width="766" height="856" /></div>
+              <div class="cs-swatch-card"><img src="tenzir-assets/ds-2.webp" alt="Design system component: Icon set" loading="lazy" width="766" height="856" /></div>
+              <div class="cs-swatch-card"><img src="tenzir-assets/ds-3.webp" alt="Design system component: Create pipeline modal" loading="lazy" width="766" height="856" /></div>
+              <div class="cs-swatch-card"><img src="tenzir-assets/ds-4.webp" alt="Design system component: Buttons and tooltips" loading="lazy" width="766" height="856" /></div>
+              <div class="cs-swatch-card"><img src="tenzir-assets/ds-5.webp" alt="Design system component: Workspace selector dropdown" loading="lazy" width="766" height="856" /></div>
+              <div class="cs-swatch-card"><img src="tenzir-assets/ds-6.webp" alt="Design system component: Context menus and time range picker" loading="lazy" width="766" height="856" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 9. WIREFRAMING & PROTOTYPES ── -->
+    <section class="page-container cs-long-section">
+      <div class="cs-two-col-grid mb-12 md:mb-16">
+        <div>
+          <div class="cs-numbered-section mb-4">
+            <span class="cs-num">12</span>
+            <span class="cs-section-label">Wireframing</span>
+          </div>
+          <p class="cs-body-text">I used Figma to create low-fidelity wireframes that outlined the basic structure and layout without detailed design elements. I focused on arranging key UI elements such as navigation, buttons, forms, and content areas to establish the overall flow and hierarchy. Eventually, I shared the initial wireframes with the product team and stakeholders to gather feedback. I iterated on the designs based on input to refine and improve the layout.</p>
+        </div>
+        <div>
+          <div class="cs-numbered-section mb-4">
+            <span class="cs-num">13</span>
+            <span class="cs-section-label">Prototypes</span>
+          </div>
+          <p class="cs-body-text">I enhanced the wireframes with more detailed design elements, including typography, icons, and spacing. I also added annotations to explain interactions and functionality. Finally, I created interactive prototypes to simulate user interactions and provide a more realistic preview of the final product. The prototypes were iterated upon multiple times based on feedback and usability testing with the product team, ensuring the design was user-centric and functional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROTOTYPE IMAGES ── -->
+    <section class="cs-proto-section">
+      <div class="page-container">
+        <div class="cs-proto-grid">
+          <div class="cs-proto-item">
+            <img src="tenzir-assets/tenzir-prototype-1.svg" alt="Tenzir login screen prototype — Welcome screen with Google, GitHub, and Microsoft sign-in options" loading="lazy" width="1209" height="732" />
+          </div>
+          <div class="cs-proto-item">
+            <img src="tenzir-assets/tenzir-prototype-2.svg" alt="Tenzir pipeline creation screen — Add node interface with empty state" loading="lazy" width="1197" height="731" />
+          </div>
+          <div class="cs-proto-item">
+            <img src="tenzir-assets/tenzir-prototype-3.svg" alt="Tenzir editor — Query editor with suricata.alert results table showing security event data" loading="lazy" width="1212" height="744" />
+          </div>
+          <div class="cs-proto-item">
+            <img src="tenzir-assets/tenzir-prototype-4.svg" alt="Tenzir editor — Query editor showing Open File Types bar chart visualization" loading="lazy" width="1213" height="746" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ── 11. REFLECTION ── -->
+    <section class="cs-reflection-section">
+      <div class="page-container cs-reflection-inner">
+        <div class="cs-numbered-section mb-8">
+          <span class="cs-num cs-num-light">15</span>
+          <span class="cs-section-label cs-label-light">Reflection</span>
+        </div>
+        <p class="cs-reflection-text">Creating the MVP for Tenzir was a rewarding and insightful experience. Despite limited direct user research, I relied on internal stakeholder interviews and their industry expertise to identify core needs and pain points. Collaborative brainstorming sessions and iterative feedback loops were crucial in refining our ideas and aligning our vision. Developing interactive prototypes allowed us to test and validate assumptions, ensuring a functional, intuitive, and user-centric design. This project emphasized the importance of flexibility, effective communication, and iterative design in creating a successful MVP. It enhanced my skills and deepened my understanding of designing complex data management tools.</p>
+      </div>
+    </section>
+
+    <!-- ── NEXT PROJECT ── -->
+    <section class="page-container cs-next-section">
+      <p class="text-xs tracking-label uppercase text-neutral-500 mb-4">Next · Other projects</p>
+      <a href="bm.html" class="cs-next-link font-display font-semibold">Redesign of the space utilization dashboard to help decarbonize real estate</a>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="border-t border-neutral-200">
+    <div class="page-container py-8 md:py-10">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <p class="text-xs tracking-label uppercase text-neutral-900">Anna Dehtiarova</p>
+        <p class="hidden sm:block text-xs tracking-label uppercase text-neutral-600">
+          <a href="mailto:anna.dehtiarova@gmail.com" data-email="anna.dehtiarova@gmail.com" class="js-copy-email hover:text-neutral-900 transition-colors">Email</a>
+          <span class="mx-2">&middot;</span>
+          <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition-colors">LinkedIn</a>
+        </p>
+        <div class="flex sm:hidden flex-col gap-3 text-xs tracking-label uppercase text-neutral-600">
+          <a href="mailto:anna.dehtiarova@gmail.com" data-email="anna.dehtiarova@gmail.com" class="js-copy-email hover:text-neutral-900 transition-colors">Email</a>
+          <a href="https://www.linkedin.com/in/annadehtiarova/" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 transition-colors">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile drawer
+    const menuBtn = document.getElementById('menu-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+
+    function openMenu() {
+      mobileMenu.classList.add('is-open');
+      overlay.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    menuCloseBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
+    // Copy email
+    document.querySelectorAll('.js-copy-email').forEach(link => {
+      const originalText = link.textContent;
+      const email = link.getAttribute('data-email');
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const showCopied = () => { link.textContent = 'Copied!'; setTimeout(() => { link.textContent = originalText; }, 1600); };
+        const legacyCopy = () => {
+          try {
+            const t = document.createElement('textarea');
+            t.value = email; t.style.position = 'fixed'; t.style.top = '0'; t.style.left = '0'; t.style.opacity = '0';
+            document.body.appendChild(t); t.focus(); t.select();
+            document.execCommand('copy') ? showCopied() : (window.location.href = `mailto:${email}`);
+            document.body.removeChild(t);
+          } catch { window.location.href = `mailto:${email}`; }
+        };
+        window.isSecureContext && navigator.clipboard?.writeText ? navigator.clipboard.writeText(email).then(showCopied).catch(legacyCopy) : legacyCopy();
+      });
+    });
+  </script>
+</body>
+</html>

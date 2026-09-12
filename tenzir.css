@@ -1,0 +1,203 @@
+/* -----------------------------------------------------------------------
+   tenzir.css — Tenzir case-study page styles
+   Depends on styles.css for resets, shared header/footer and utilities.
+----------------------------------------------------------------------- */
+
+/* ── Shared layout token ── */
+.page-container {
+  max-width: 1659px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 768px)  { .page-container { padding-left: 2.5rem; padding-right: 2.5rem; } }
+@media (min-width: 1024px) { .page-container { padding-left: 4rem; padding-right: 4rem; } }
+
+/* ── Shared case-study atoms ── */
+.cs-num           { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 600; color: #9ca3af; letter-spacing: 0.04em; margin-right: 0.6rem; }
+.cs-num-light     { color: #9797c7; }
+.cs-section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #737373; }
+.cs-label-light   { color: #b9b9dd; }
+.cs-numbered-section { display: flex; align-items: baseline; }
+.cs-rule          { width: 2.5rem; height: 1px; background: #d4d4d4; margin-top: 1.5rem; }
+.cs-body-text     { font-size: 1rem; line-height: 1.75; color: #404040; }
+.cs-meta-value    { font-size: 1.05rem; line-height: 1.6; color: #171717; margin-top: 0.4rem; }
+.mt-8  { margin-top: 2rem; }
+.mb-4  { margin-bottom: 1rem; }
+.mb-5  { margin-bottom: 1.25rem; }
+.mb-6  { margin-bottom: 1.5rem; }
+.mb-8  { margin-bottom: 2rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+@media (min-width: 768px) { .md\:mb-16 { margin-bottom: 4rem; } }
+
+/* ── Hero ── */
+.cs-hero-section { padding-top: 2.5rem; padding-bottom: 3.5rem; }
+@media (min-width: 768px)  { .cs-hero-section { padding-top: 3.5rem; } }
+@media (min-width: 1024px) { .cs-hero-section { padding-top: 4rem; } }
+.cs-hero { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+.cs-hero-logo { display: block; height: 28px; width: auto; margin-bottom: 0.5rem; }
+.cs-h1 { font-size: clamp(1.9rem, 3.4vw, 3.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; max-width: 26ch; color: #171717; }
+@media (min-width: 768px) {
+  .cs-hero { grid-template-columns: 240px 1fr; align-items: start; gap: 3rem; }
+}
+@media (min-width: 1024px) {
+  .cs-hero { grid-template-columns: 394px 1fr; gap: 4.5rem; }
+}
+
+/* ── Header image + overview/problem/solution ── */
+.cs-header-section { padding-top: 0.5rem; padding-bottom: 3.5rem; }
+.cs-header-img-wrap { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+.cs-header-img-col img { border-radius: 4px; width: 100%; display: block; height: auto; max-height: 500px; object-fit: cover; object-position: center; }
+.cs-overview-list { display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 1024px) {
+  .cs-header-img-wrap { grid-template-columns: 1fr 1fr; align-items: start; gap: 5rem; }
+  .cs-header-img-col img { max-height: 624px; }
+  .cs-header-section { padding-top: 3rem; padding-bottom: 3.5rem; }
+}
+
+/* ── Pull quote ── */
+.cs-quote-section { background: #EAE9FF; padding: 4.5rem 0; }
+.cs-quote-inner   { max-width: 820px; margin: 0 0; }
+.cs-quote {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #171717;
+  font-style: normal;
+}
+
+/* ── Meta grid (role / process / tools / research) ── */
+.cs-meta-section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.cs-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  
+  padding-top: 2.5rem;
+}
+@media (min-width: 768px) { .cs-meta-grid { grid-template-columns: 1fr 1fr; gap: 0; } }
+.cs-meta-left  { padding-right: 3rem; }
+.cs-meta-right { padding-left: 3rem; border-left: 1px solid #e5e5e5; }
+@media (max-width: 767px) {
+  .cs-meta-left  { padding-right: 0; }
+  .cs-meta-right { padding-left: 0; border-left: none; border-top: 1px solid #e5e5e5; padding-top: 2rem; margin-top: 0.5rem; }
+}
+.cs-rule-short { width: 2.5rem; height: 1px; background: #d4d4d4; margin-top: 1rem; }
+.cs-research-list { list-style: none; margin-top: 0.4rem; }
+.cs-research-list li { font-size: 1.05rem; line-height: 1.8; color: #171717; }
+
+/* ── Long section (label left / body right) ── */
+.cs-long-section { padding-top: 3rem; padding-bottom: 3rem; }
+
+.cs-long-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 1024px) { .cs-long-grid { grid-template-columns: 580px 1fr; gap: 5rem; align-items: start; } }
+
+/* ── Personas ── */
+.cs-personas-section { background: #EAE9FF; padding: 4rem 0 4.5rem; }
+.cs-personas-intro   { max-width: 60ch; margin-top: 0.75rem; }
+.cs-personas-grid    { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+@media (min-width: 640px)  { .cs-personas-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .cs-personas-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.cs-persona-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.cs-persona-header  { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.9rem; }
+.cs-persona-avatar  { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.cs-avatar-blue     { background: #D8E8F3; }
+.cs-avatar-teal     { background: #DCEFEC; }
+.cs-avatar-orange   { background: #F3E0D3; }
+.cs-avatar-purple   { background: #E3E1F7; }
+.cs-persona-name    { font-size: 0.95rem; font-weight: 600; color: #171717; }
+.cs-persona-role    { font-size: 0.68rem; color: #737373; margin-top: 0.1rem; }
+.cs-persona-bio     { font-size: 0.85rem; line-height: 1.55; color: #525252; margin-bottom: 1rem; }
+.cs-persona-divider { height: 1px; background: #e5e5e5; margin: 0 0 1rem; }
+.cs-persona-section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #171717; margin-bottom: 0.5rem; }
+.cs-persona-list    { list-style: none; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.cs-persona-list li { font-size: 0.8rem; line-height: 1.45; color: #525252; padding-left: 0.85rem; position: relative; }
+.cs-persona-list li::before { content: "–"; position: absolute; left: 0; color: #a3a3a3; }
+.cs-persona-card > *:last-child { margin-bottom: 0; }
+
+/* ── Ideation & design: user stories / user flows ── */
+.cs-two-col-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+@media (min-width: 1024px) { .cs-two-col-grid { grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; } }
+.cs-h2 { font-size: clamp(1.35rem, 2.2vw, 1.7rem); line-height: 1.2; color: #171717; }
+.cs-user-stories { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+.cs-user-stories li { display: flex; gap: 0.9rem; font-size: 0.95rem; line-height: 1.6; color: #404040; padding: 24px; border-bottom: 1px solid #e5e5e5;}
+.cs-story-num { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.85rem; color: #a3a3a3; flex-shrink: 0;}
+
+//* ── Brainstorming ── */
+.cs-brainstorm-grid { 
+  align-items: center; 
+}
+
+@media (max-width: 639px) {
+  .cs-brainstorm-grid {
+    display: flex !important;
+    flex-direction: column-reverse !important; 
+    gap: 2rem;
+  }
+  
+  /* Force the image wrapper / direct child div and the image to take full width */
+  .cs-brainstorm-grid > div {
+    width: 100% !important;
+  }
+
+  .cs-brainstorm-grid img { 
+    border-radius: 8px; 
+    width: 100% !important; 
+    max-width: 100% !important;
+    height: auto; 
+    max-height: none; /* Removes height restriction if you want it responsive */
+    object-fit: cover; 
+    object-position: top center; 
+  }
+}
+
+.cs-brainstorm-grid img { 
+  border-radius: 8px; 
+  width: 100%; 
+  height: auto; 
+  max-height: 420px; 
+  object-fit: cover; 
+  object-position: top center; 
+}
+
+.cs-brainstorm-text { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+/* ── Prototype images grid ── */
+.cs-proto-section { padding-bottom: 3.5rem; }
+.cs-proto-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 640px) { .cs-proto-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+.cs-proto-item { border-radius: 8px; overflow: hidden; }
+.cs-proto-item img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+/* ── Design system ── */
+.cs-ds-section { padding-top: 3.5rem; padding-bottom: 3.5rem; background-color: #EAE9FF;}
+.cs-ds-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+@media (min-width: 1024px) { .cs-ds-grid { grid-template-columns: 540px 1fr; gap: 4rem; align-items: start; } }
+.cs-ds-swatch-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+@media (min-width: 640px) { .cs-ds-swatch-grid { grid-template-columns: repeat(3, 1fr); } }
+.cs-swatch-card { border-radius: 8px; overflow: hidden;  border: 1px solid #ececec; }
+.cs-swatch-card img { width: 100%; height: auto; display: block; }
+
+/* ── Reflection ── */
+.cs-reflection-section { background: #34345F; padding: 4.5rem 0; }
+.cs-reflection-inner { max-width: 900px; margin: 0 0;}
+.cs-reflection-text { font-size: 1.05rem; line-height: 1.8; color: #cfcfe8; }
+
+/* ── Next project ── */
+.cs-next-section { padding-top: 3.5rem; padding-bottom: 4.5rem; }
+.cs-next-link { display: block; font-size: clamp(1.5rem, 7vw, 2.2rem); text-decoration: underline; line-height: 1.25; max-width: 22ch; color: #171717; transition: opacity 150ms ease; }
+
