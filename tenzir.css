@@ -58,8 +58,16 @@
 }
 
 /* ── Pull quote ── */
-.cs-quote-section { background: #EAE9FF; padding: 4.5rem 0; }
-.cs-quote-inner   { max-width: 820px; margin: 0 0; }
+
+.cs-quote-section {
+  background: #EAE9FF;
+  padding: 4.5rem 0;
+}
+
+.cs-quote-inner {
+  /* Alignment comes from .page-container */
+}
+
 .cs-quote {
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(1.6rem, 3.2vw, 2.5rem);
@@ -67,6 +75,7 @@
   line-height: 1.25;
   color: #171717;
   font-style: normal;
+  max-width: 820px;
 }
 
 /* ── Meta grid (role / process / tools / research) ── */
@@ -193,9 +202,22 @@
 .cs-swatch-card img { width: 100%; height: auto; display: block; }
 
 /* ── Reflection ── */
-.cs-reflection-section { background: #34345F; padding: 4.5rem 0; }
-.cs-reflection-inner { max-width: 900px; margin: 0 0;}
-.cs-reflection-text { font-size: 1.05rem; line-height: 1.8; color: #cfcfe8; }
+
+.cs-reflection-section {
+  background: #34345F;
+  padding: 4.5rem 0;
+}
+
+.cs-reflection-inner {
+  /* Alignment comes from .page-container */
+}
+
+.cs-reflection-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cfcfe8;
+  max-width: 900px;
+}
 
 /* ── Next project ── */
 .cs-next-section { padding-top: 3.5rem; padding-bottom: 4.5rem; }
